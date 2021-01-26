@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Methods | A Minimal Book Example</title>
+  <title>get_all_goups() | HDF5 Import API Documentation</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Methods | A Minimal Book Example" />
+  <meta property="og:title" content="get_all_goups() | HDF5 Import API Documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Methods | A Minimal Book Example" />
+  <meta name="twitter:title" content="get_all_goups() | HDF5 Import API Documentation" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,15 +24,14 @@
 <meta name="author" content="Zack Goldblum - Moberg Analytics" />
 
 
-<meta name="date" content="2021-01-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="literature.html"/>
-<link rel="next" href="applications.html"/>
+<link rel="prev" href="get-all-group-paths.html"/>
+<link rel="next" href="get-all-dataset-paths.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -131,21 +130,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">HDF5 Import API Documentation</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="" data-path="group.html"><a href="group.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i>Literature</a></li>
-<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>Methods</a></li>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i>Applications</a><ul>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i>Example one</a></li>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i>Example two</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html"><i class="fa fa-check"></i>Class: HDF5Import</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#group-functions"><i class="fa fa-check"></i>Group Functions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i>Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="get-all-group-paths.html"><a href="get-all-group-paths.html"><i class="fa fa-check"></i>get_all_group_paths()</a></li>
+<li class="chapter" data-level="" data-path="get-all-goups.html"><a href="get-all-goups.html"><i class="fa fa-check"></i>get_all_goups()</a><ul>
+<li class="chapter" data-level="" data-path="get-all-goups.html"><a href="get-all-goups.html#dataset-functions"><i class="fa fa-check"></i>Dataset Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="get-all-dataset-paths.html"><a href="get-all-dataset-paths.html"><i class="fa fa-check"></i>get_all_dataset_paths()</a></li>
+<li class="chapter" data-level="" data-path="get-all-datasets.html"><a href="get-all-datasets.html"><i class="fa fa-check"></i>get_all_datasets()</a><ul>
+<li class="chapter" data-level="" data-path="get-all-datasets.html"><a href="get-all-datasets.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html"><i class="fa fa-check"></i>Class: HDF5Convert</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#group-functions-1"><i class="fa fa-check"></i>Group Functions</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#dataset-functions-1"><i class="fa fa-check"></i>Dataset Functions</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#misc.-functions-1"><i class="fa fa-check"></i>Misc. Functions</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://www.moberg.com/" target="blank">Moberg Research</a></li>
 
 </ul>
 
@@ -156,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HDF5 Import API Documentation</a>
           </h1>
         </div>
 
@@ -164,18 +170,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1">
-<h1>Methods</h1>
-<p>We describe our methods in this chapter.</p>
-
+<div id="get_all_goups" class="section level1">
+<h1>get_all_goups()</h1>
+<div id="dataset-functions" class="section level2">
+<h2>Dataset Functions</h2>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="get-all-group-paths.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="get-all-dataset-paths.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -206,7 +213,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/hdf5_import_class.Rmd",
 "text": "Edit"
 },
 "history": {

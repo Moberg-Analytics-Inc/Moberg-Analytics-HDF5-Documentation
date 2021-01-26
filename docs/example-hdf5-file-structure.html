@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Methods | A Minimal Book Example</title>
+  <title>Example HDF5 File Structure | HDF5 Import API Documentation</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Methods | A Minimal Book Example" />
+  <meta property="og:title" content="Example HDF5 File Structure | HDF5 Import API Documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Methods | A Minimal Book Example" />
+  <meta name="twitter:title" content="Example HDF5 File Structure | HDF5 Import API Documentation" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,15 +24,14 @@
 <meta name="author" content="Zack Goldblum - Moberg Analytics" />
 
 
-<meta name="date" content="2021-01-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="literature.html"/>
-<link rel="next" href="applications.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="class-hdf5import.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -131,21 +130,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">HDF5 Import API Documentation</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="" data-path="group.html"><a href="group.html"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i>Literature</a></li>
-<li class="chapter" data-level="" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i>Methods</a></li>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i>Applications</a><ul>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i>Example one</a></li>
-<li class="chapter" data-level="" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i>Example two</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="example-hdf5-file-structure.html"><a href="example-hdf5-file-structure.html"><i class="fa fa-check"></i>Example HDF5 File Structure</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html"><i class="fa fa-check"></i>Class: HDF5Import</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#group-functions"><i class="fa fa-check"></i>Group Functions</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#get_all_group_paths"><i class="fa fa-check"></i>get_all_group_paths()</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#get_all_goups"><i class="fa fa-check"></i>get_all_goups()</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i>Final Words</a></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#dataset-functions"><i class="fa fa-check"></i>Dataset Functions</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#get_all_dataset_paths"><i class="fa fa-check"></i>get_all_dataset_paths()</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#get_all_datasets"><i class="fa fa-check"></i>get_all_datasets()</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="class-hdf5import.html"><a href="class-hdf5import.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html"><i class="fa fa-check"></i>Class: HDF5Convert</a><ul>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#group-functions-1"><i class="fa fa-check"></i>Group Functions</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#dataset-functions-1"><i class="fa fa-check"></i>Dataset Functions</a></li>
+<li class="chapter" data-level="" data-path="class-hdf5convert.html"><a href="class-hdf5convert.html#misc.-functions-1"><i class="fa fa-check"></i>Misc. Functions</a></li>
+</ul></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="https://www.moberg.com/" target="blank">Moberg Research</a></li>
 
 </ul>
 
@@ -156,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HDF5 Import API Documentation</a>
           </h1>
         </div>
 
@@ -164,9 +171,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="methods" class="section level1">
-<h1>Methods</h1>
-<p>We describe our methods in this chapter.</p>
+<div id="example-hdf5-file-structure" class="section level1">
+<h1>Example HDF5 File Structure</h1>
+<div class="figure">
+<img src="images/example_file_structure.jpg" alt="" />
+<p class="caption">example.h5 open in HDFView 3.1.1</p>
+</div>
+<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
+<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="example-hdf5-file-structure.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
+<span id="cb1-2"><a href="example-hdf5-file-structure.html#cb1-2"></a><span class="co"># or the development version</span></span>
+<span id="cb1-3"><a href="example-hdf5-file-structure.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
+<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
+<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.name/tinytex/" class="uri">https://yihui.name/tinytex/</a>.</p>
 
 </div>
             </section>
@@ -174,8 +191,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="literature.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="class-hdf5import.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -206,7 +223,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
 "text": "Edit"
 },
 "history": {

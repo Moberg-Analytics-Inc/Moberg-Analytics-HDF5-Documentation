@@ -1,0 +1,640 @@
+# HDF5Import
+*DESCRIPTION:*
+
+This class contains methods that organize the contents of the HDF5 file into lists and dictionaries.
+
+*PARAMETERS:*
+
+- **hdf5file**: HDF5 file
+
+    user-selected HDF5 file
+
+*ATTRIBUTES:*
+
+- **hdf5file**: HDF5 file
+
+    user-selected HDF5 file
+- **hdf5file_name**: HDF5 file name
+
+    name of the HDF5 file
+- **all_groups_dict**: dict
+
+    dictionary of every group and its associated info
+- **all_datasets_dict**: dict
+
+    dictionary of every dataset and its associated info
+    
+*EXAMPLE:*
+
+```{python, echo=FALSE, results='hide'}
+import os
+import h5py
+import pprint
+os.chdir(r"B:\Desktop\Moberg\my_code\active")
+from hdf5_classes import HDF5Import
+```
+
+```{python}
+# Instantiate the HDF5Import class
+hdf5file = h5py.File(r"B:\Desktop\Moberg\data\hdf5\example.h5", "r")
+hdf5_object = HDF5Import(hdf5file=hdf5file)
+```
+
+## Group Functions
+
+### get_all_group_paths
+
+**get_all_group_paths()**
+
+*DESCRIPTION:*
+
+Returns a list of all group paths in the HDF5 file (including the Root Group and subgroups).
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_group_paths_list**: list
+
+    list of all group paths
+    
+*EXAMPLE:*
+
+```{python}
+all_group_paths_list = hdf5_object.get_all_group_paths()
+
+```
+```{python, echo=FALSE}
+pprint.pp(all_group_paths_list)
+```
+
+### get_all_group_objs
+
+**get_all_group_objs()**
+
+*DESCRIPTION:*
+
+Returns a list of all group class objects in the HDF5 file (including the Root Group and subgroups).
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_group_objs_list**: list
+
+    list of all HDF5 group class objects
+    
+*EXAMPLE:*
+
+```{python}
+all_group_objs_list = hdf5_object.get_all_group_objs()
+```
+```{python, echo=FALSE}
+print(all_group_objs_list)
+```
+
+### get_all_group_names
+
+**get_all_group_names()**
+
+*DESCRIPTION:*
+
+Returns a list of all group names in the HDF5 file (including the Root Group and subgroups).
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_group_names_list**: list
+
+    list of all group names
+    
+*EXAMPLE:*
+
+```{python}
+all_group_names_list = hdf5_object.get_all_group_names()
+```
+```{python, echo=FALSE}
+print(all_group_names_list)
+```
+
+### get_all_group_names_dict
+
+**get_all_group_names_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of all group names (including the Root Group and subgroups) and their associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_group_names_dict**: dict
+
+    dictionary of all group names and their associated info
+    
+*EXAMPLE:*
+
+```{python}
+all_groups_dict = hdf5_object.get_all_group_names_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(all_groups_dict)
+```
+
+### get_all_group_objs_dict
+
+**get_all_group_objs_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of all group objects (including the Root Group and subgroups) and their associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_group_objs_dict**: dict
+
+    dictionary of all group objects and their associated info
+    
+*EXAMPLE:*
+
+```{python}
+all_group_objs_dict = hdf5_object.get_all_group_objs_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(all_group_objs_dict)
+```
+
+### get_subgroups_list
+
+**get_subgroups_list(group_path)**
+
+*DESCRIPTION:*
+
+Returns a list of subgroup names within the group at the "group_path" location in the HDF5 file.
+
+*PARAMETERS:*
+
+- **group_path**: str
+
+    path of the group in the HDF5 file
+
+*RETURNS:*
+
+- **subgroup_list**: list
+
+    list of subgroups within a group
+    
+*EXAMPLE:*
+
+```{python}
+subgroup_list = hdf5_object.get_subgroups_list(group_path="/Group 1")
+```
+```{python, echo=FALSE}
+print(subgroup_list)
+```
+
+### is_group
+
+**is_group(test_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+group_obj = hdf5_object.get_all_group_objs()[0]
+group_obj_bool = hdf5_object.is_group(test_obj=group_obj)
+```
+```{python, echo=FALSE}
+print(group_obj_bool)
+```
+
+## Dataset Functions
+
+### get_all_dataset_paths
+
+**get_all_dataset_paths()**
+
+*DESCRIPTION:*
+
+Returns a list of all dataset paths in the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_dataset_paths_list**: list
+
+    list of all dataset paths
+    
+*EXAMPLE:*
+
+```{python}
+all_dataset_paths_list = hdf5_object.get_all_dataset_paths()
+```
+```{python, echo=FALSE}
+pprint.pp(all_dataset_paths_list)
+```
+
+### get_all_dataset_objs
+
+**get_all_dataset_objs()**
+
+*DESCRIPTION:*
+
+Returns a list of all dataset class objects in the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_dataset_objs_list**: list
+
+    list of all dataset class objects
+    
+*EXAMPLE:*
+
+```{python}
+all_dataset_objs_list = hdf5_object.get_all_dataset_objs()
+```
+```{python, echo=FALSE}
+print(all_dataset_objs_list)
+```
+
+### get_all_dataset_names
+
+**get_all_dataset_names()**
+
+*DESCRIPTION:*
+
+Returns a list of all dataset names in the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_dataset_names_list**: list
+
+    list of all dataset names
+    
+*EXAMPLE:*
+
+```{python}
+all_dataset_names_list = hdf5_object.get_all_dataset_names()
+```
+```{python, echo=FALSE}
+print(all_dataset_names_list)
+```
+
+### get_all_dataset_paths_dict
+
+**get_all_dataset_paths_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of every dataset path and its associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_dataset_paths_dict**: dict
+
+    dictionary of every dataset path and its associated info
+    
+*EXAMPLE:*
+
+```{python}
+all_dataset_paths_dict = hdf5_object.get_all_dataset_paths_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(all_dataset_paths_dict)
+```
+
+### get_all_dataset_names_dict
+
+**get_all_dataset_names_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of every dataset name and its associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **all_dataset_names_dict**: dict
+
+    dictionary of every dataset name and its associated info
+    
+*EXAMPLE:*
+
+```{python}
+all_dataset_names_dict = hdf5_object.get_all_dataset_names_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(all_dataset_names_dict)
+```
+
+### get_group_dataset_names
+
+**get_group_dataset_names(group_path)**
+
+*DESCRIPTION:*
+
+Returns a list of dataset names within the group at the "group_path" location in the HDF5 file. Does not include datasets within subgroups.
+
+*PARAMETERS:*
+
+- **group_path**: str
+
+    Path of the group in the HDF5 file
+
+*RETURNS:*
+
+- **dataset_name_list**: list
+
+    list of all datasets within the group
+    
+*EXAMPLE:*
+
+```{python}
+dataset_name_list = hdf5_object.get_group_dataset_names(group_path="Group 1")
+```
+```{python, echo=FALSE}
+print(dataset_name_list)
+```
+
+### get_dup_dataset_names
+
+**get_dup_dataset_names()**
+
+*DESCRIPTION:*
+
+Returns a list of all duplicate dataset names in the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **dup_dataset_names_list**: list
+
+    list of all duplicate dataset names
+    
+*EXAMPLE:*
+
+```{python}
+dup_dataset_names_list = hdf5_object.get_dup_dataset_names()
+```
+```{python, echo=FALSE}
+print(dup_dataset_names_list)
+```
+
+### get_dup_dataset_dict
+
+**get_dup_dataset_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of every duplicate dataset name and its associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **dup_dataset_dict**: dict
+
+    dictionary of every duplicate dataset name and its associated info
+    
+*EXAMPLE:*
+
+```{python}
+dup_dataset_dict = hdf5_object.get_dup_dataset_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(dup_dataset_dict)
+```
+
+### dup_dataset_check
+
+**dup_dataset_check(dataset_name)**
+
+*DESCRIPTION:*
+
+Returns True if "dataset_name" is a duplicate dataset in the HDF5 file. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **dataset_name**: str
+
+    name of the dataset to check 
+    
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_check = hdf5_object.dup_dataset_check(dataset_name="Dataset A")
+```
+```{python, echo=FALSE}
+print(dataset_check)
+```
+
+### zip_datasets
+
+**zip_datasets()**
+
+*DESCRIPTION:*
+
+Returns a zip object of the dataset_path_list, dataset_name_list, and dataset_list.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **zipped_datasets**: zip object
+
+    iterator of a tuple of dataset_path_list, dataset_name_list, and dataset_list
+    
+*EXAMPLE:*
+
+```{python}
+zipped_datasets = hdf5_object.zip_datasets()
+```
+```{python, echo=FALSE}
+print(zipped_datasets)
+pprint.pp([tup for tup in zipped_datasets])
+```
+
+### is_dataset
+
+**is_dataset(test_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_obj = hdf5_object.get_all_dataset_objs()[0]
+dataset_obj_bool = hdf5_object.is_dataset(test_obj=dataset_obj)
+```
+```{python, echo=FALSE}
+print(dataset_obj_bool)
+```
+
+## Misc. Functions
+
+### get_hdf5file_name
+
+**get_hdf5file_name(hdf5file)**
+
+*DESCRIPTION:*
+
+Parses the HDF5 file path (on the system) and returns the name of the HDF5 file.
+
+*PARAMETERS:*
+
+- **hdf5file**: HDF5 file
+
+    user-selected HDF5 file
+
+*RETURNS:*
+
+- **hdf5file_name**: str
+
+    name of the HDF5 file
+    
+*EXAMPLE:*
+
+```{python}
+hdf5file_name = hdf5_object.get_hdf5file_name(hdf5file=hdf5file)
+```
+```{python, echo=FALSE}
+print(hdf5file_name)
+```
+
+### split_hdf5_path
+
+**split_hdf5_path(hdf5_path)**
+
+*DESCRIPTION:*
+
+Parses an HDF5 group or dataset path and creates a list of the path components.
+
+*PARAMETERS:*
+
+- **hdf5_path**: str
+
+    HDF5 path to the group or dataset
+
+*RETURNS:*
+
+- **split_path**: list
+
+    list of path components
+    
+*EXAMPLE:*
+
+```{python}
+split_path = hdf5_object.split_hdf5_path(hdf5_path="Group 1/Dataset A")
+```
+```{python, echo=FALSE}
+print(split_path)
+```
+
+### get_name_from_hdf5_path
+
+**get_name_from_hdf5_path(hdf5_path)**
+
+*DESCRIPTION:*
+
+Returns the group or dataset name from the HDF5 file path.
+
+*PARAMETERS:*
+
+- **hdf5_path**: str
+
+    HDF5 path to the group or dataset
+
+*RETURNS:*
+
+- **name**: str
+
+    name of the group or dataset
+    
+*EXAMPLE:*
+
+```{python}
+dataset_name = hdf5_object.get_name_from_hdf5_path(hdf5_path="/Group 1/Dataset A")
+```
+```{python, echo=FALSE}
+print(dataset_name)
+```
