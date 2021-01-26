@@ -1,4 +1,4 @@
-book_filename: "bookdown-demo"
-output_dir: docs
+book_filename: "HDF5 API Documentation"
+output_dir: docs_output
 delete_merged_file: true
 rmd_files: ["index.Rmd", "hdf5_import_class.Rmd", "hdf5_convert_class.Rmd"]
