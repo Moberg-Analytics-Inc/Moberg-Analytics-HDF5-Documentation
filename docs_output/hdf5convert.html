@@ -160,9 +160,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#is_dataset"><i class="fa fa-check"></i>is_dataset</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_hdf5file_name"><i class="fa fa-check"></i>get_hdf5file_name</a></li>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name"><i class="fa fa-check"></i>get_name</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#split_hdf5_path"><i class="fa fa-check"></i>split_hdf5_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name_from_hdf5_path"><i class="fa fa-check"></i>get_name_from_hdf5_path</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html"><i class="fa fa-check"></i>HDF5Convert</a><ul>
@@ -184,10 +186,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_column_names"><i class="fa fa-check"></i>get_column_names</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_numpy_values"><i class="fa fa-check"></i>get_numpy_values</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_pandas_values"><i class="fa fa-check"></i>get_pandas_values</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#misc.-functions-1"><i class="fa fa-check"></i>Misc. Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -231,9 +229,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of every dataset and its associated info</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="hdf5convert.html#cb45-1"></a><span class="co"># Instantiate the HDF5Convert class</span></span>
-<span id="cb45-2"><a href="hdf5convert.html#cb45-2"></a>hdf5file <span class="op">=</span> h5py.File(<span class="vs">r&quot;B:\Desktop\Moberg\data\hdf5\example.h5&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
-<span id="cb45-3"><a href="hdf5convert.html#cb45-3"></a>conv_object <span class="op">=</span> HDF5Convert(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="hdf5convert.html#cb51-1"></a><span class="co"># Instantiate the HDF5Convert class</span></span>
+<span id="cb51-2"><a href="hdf5convert.html#cb51-2"></a>hdf5file <span class="op">=</span> h5py.File(<span class="vs">r&quot;B:\Desktop\Moberg\data\hdf5\example.h5&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
+<span id="cb51-3"><a href="hdf5convert.html#cb51-3"></a>conv_object <span class="op">=</span> HDF5Convert(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
 <div id="group-functions-1" class="section level2">
 <h2>Group Functions</h2>
 <div id="get_group_info" class="section level3">
@@ -252,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of group info</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="hdf5convert.html#cb46-1"></a>group_info <span class="op">=</span> conv_object.get_group_info(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="hdf5convert.html#cb52-1"></a>group_info <span class="op">=</span> conv_object.get_group_info(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##  &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##  &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
@@ -276,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>instance of the HDF5 group class</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="hdf5convert.html#cb48-1"></a>group_obj <span class="op">=</span> conv_object.get_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="hdf5convert.html#cb54-1"></a>group_obj <span class="op">=</span> conv_object.get_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;HDF5 group &quot;/Group 1/Subgroup 1&quot; (1 members)&gt;</code></pre>
 </div>
 <div id="get_subgroup_dict" class="section level3">
@@ -295,7 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of subgroup info for each subgroup in the group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="hdf5convert.html#cb50-1"></a>subgroup_dict <span class="op">=</span> conv_object.get_subgroup_dict(group_path<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="hdf5convert.html#cb56-1"></a>subgroup_dict <span class="op">=</span> conv_object.get_subgroup_dict(group_path<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;Subgroup 1&#39;: {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##                 &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##                 &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
@@ -319,7 +317,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of group info, subgroups, and datasets</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="hdf5convert.html#cb52-1"></a>group_dict <span class="op">=</span> conv_object.get_group_dict(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="hdf5convert.html#cb58-1"></a>group_dict <span class="op">=</span> conv_object.get_group_dict(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##  &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##  &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
@@ -356,7 +354,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>instance of the class object of the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="hdf5convert.html#cb54-1"></a>parent_group_obj <span class="op">=</span> conv_object.get_parent_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="hdf5convert.html#cb60-1"></a>parent_group_obj <span class="op">=</span> conv_object.get_parent_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;HDF5 group &quot;/Group 1&quot; (2 members)&gt;</code></pre>
 </div>
 <div id="get_parent_group_path" class="section level3">
@@ -381,7 +379,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>path in HDF5 file to the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="hdf5convert.html#cb56-1"></a>parent_group_path <span class="op">=</span> conv_object.get_parent_group_path(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="hdf5convert.html#cb62-1"></a>parent_group_path <span class="op">=</span> conv_object.get_parent_group_path(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## /Group 1</code></pre>
 </div>
 <div id="get_parent_group_name" class="section level3">
@@ -406,7 +404,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>name of the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb58-1"><a href="hdf5convert.html#cb58-1"></a>parent_group_name <span class="op">=</span> conv_object.get_parent_group_name(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="hdf5convert.html#cb64-1"></a>parent_group_name <span class="op">=</span> conv_object.get_parent_group_name(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## Group 1</code></pre>
 </div>
 <div id="get_eeg_matrix" class="section level3">
@@ -428,8 +426,8 @@ default value: “pandas”</p></li>
 <p>matrix of all EEG channel values of a group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="hdf5convert.html#cb60-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: need to create sample HDF5 file with EEG data</span></span>
-<span id="cb60-2"><a href="hdf5convert.html#cb60-2"></a><span class="co">#eeg_matrix = conv_object.get_eeg_matrix(group_name=&quot;SampleSeries&quot;, #matrix_type=&quot;pandas&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="hdf5convert.html#cb66-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: need to create sample HDF5 file with EEG data</span></span>
+<span id="cb66-2"><a href="hdf5convert.html#cb66-2"></a><span class="co">#eeg_matrix = conv_object.get_eeg_matrix(group_name=&quot;SampleSeries&quot;, #matrix_type=&quot;pandas&quot;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="dataset-functions-1" class="section level2">
@@ -453,7 +451,7 @@ default value: “pandas”</p></li>
 <p>dictionary of dataset info</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="hdf5convert.html#cb61-1"></a>dataset_info_dict <span class="op">=</span> conv_object.get_dataset_info(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="hdf5convert.html#cb67-1"></a>dataset_info_dict <span class="op">=</span> conv_object.get_dataset_info(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;dataset_name&#39;: &#39;Dataset A&#39;,
 ##  &#39;dataset_path&#39;: &#39;Group 1/Dataset A&#39;,
 ##  &#39;dataset_metadata&#39;: {&#39;datasetA_attr1&#39;: array([345]),
@@ -479,7 +477,7 @@ default value: “pandas”</p></li>
 <p>instance of the HDF5 dataset class</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="hdf5convert.html#cb63-1"></a>dataset_obj <span class="op">=</span> conv_object.get_dataset_obj(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="hdf5convert.html#cb69-1"></a>dataset_obj <span class="op">=</span> conv_object.get_dataset_obj(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;</code></pre>
 </div>
 <div id="get_dataset_dict" class="section level3">
@@ -501,7 +499,7 @@ default value: “pandas”</p></li>
 <p>dictionary of dataset info and values</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="hdf5convert.html#cb65-1"></a>dataset_dict <span class="op">=</span> conv_object.get_dataset_dict(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="hdf5convert.html#cb71-1"></a>dataset_dict <span class="op">=</span> conv_object.get_dataset_dict(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;dataset_name&#39;: None,
 ##  &#39;dataset_path&#39;: &#39;Group 1/Dataset A&#39;,
 ##  &#39;dataset_metadata&#39;: {&#39;datasetA_attr1&#39;: array([345]),
@@ -525,7 +523,7 @@ default value: “pandas”</p></li>
 <p>list of the dataset names within the subgroups</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="hdf5convert.html#cb67-1"></a>subgroup_dataset_names <span class="op">=</span> conv_object.get_all_subgroup_dataset_names(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="hdf5convert.html#cb73-1"></a>subgroup_dataset_names <span class="op">=</span> conv_object.get_all_subgroup_dataset_names(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
 <pre><code>## [&#39;Dataset B&#39;]</code></pre>
 </div>
 <div id="get_column_names" class="section level3">
@@ -547,7 +545,7 @@ default value: “pandas”</p></li>
 <p>list of column names</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="hdf5convert.html#cb69-1"></a>column_names_list <span class="op">=</span> conv_object.get_column_names(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="hdf5convert.html#cb75-1"></a>column_names_list <span class="op">=</span> conv_object.get_column_names(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## []</code></pre>
 </div>
 <div id="get_numpy_values" class="section level3">
@@ -569,7 +567,7 @@ default value: “pandas”</p></li>
 <p>NumPy Array of dataset values</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="hdf5convert.html#cb71-1"></a>np_values <span class="op">=</span> conv_object.get_numpy_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="hdf5convert.html#cb77-1"></a>np_values <span class="op">=</span> conv_object.get_numpy_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## array([[0]])</code></pre>
 </div>
 <div id="get_pandas_values" class="section level3">
@@ -591,69 +589,9 @@ default value: “pandas”</p></li>
 <p>Pandas DataFrame of dataset values</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="hdf5convert.html#cb73-1"></a>pd_values <span class="op">=</span> conv_object.get_pandas_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="hdf5convert.html#cb79-1"></a>pd_values <span class="op">=</span> conv_object.get_pandas_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## Shape of passed values is (1, 1), indices imply (1, 0)</code></pre>
 <pre><code>## None</code></pre>
-</div>
-</div>
-<div id="misc.-functions-1" class="section level2">
-<h2>Misc. Functions</h2>
-<div id="get_path" class="section level3">
-<h3>get_path</h3>
-<p><strong>get_metadata(group_name, dataset_name)</strong></p>
-<p><em>DESCRIPTION:</em></p>
-<p>Returns the HDF5 file path to a group or dataset.</p>
-<p><em>PARAMETERS:</em></p>
-<ul>
-<li><p><strong>group_name</strong>: str</p>
-<p>group name to get the path to</p></li>
-</ul>
-<p>-or-</p>
-<ul>
-<li><p><strong>dataset_name</strong>: str</p>
-<p>dataset name to get the path to</p></li>
-</ul>
-<p><em>RETURNS:</em></p>
-<ul>
-<li><p><strong>hdf5_path</strong>: str</p>
-<p>path to the group or dataset location in the HDF5 file</p></li>
-</ul>
-<p><em>EXAMPLES:</em></p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="hdf5convert.html#cb76-1"></a>hdf5_path <span class="op">=</span> conv_object.get_path(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
-<pre><code>## Group 1</code></pre>
-</div>
-<div id="get_metadata" class="section level3">
-<h3>get_metadata</h3>
-<p><strong>get_metadata(group_name=None, dataset_name=None, dataset_path=None)</strong></p>
-<p><em>DESCRIPTION:</em></p>
-<p>Returns a dictionary of metadata attributes.</p>
-<p><em>PARAMETERS:</em></p>
-<ul>
-<li><p><strong>group_name</strong>: str</p>
-<p>group name to get the metadata of</p></li>
-</ul>
-<p>-or-</p>
-<ul>
-<li><p><strong>dataset_name</strong>: str</p>
-<p>dataset name to get the metadata of</p></li>
-</ul>
-<p>-or-</p>
-<ul>
-<li><p><strong>dataset_path</strong>: str</p>
-<p>dataset path to get the metadata of</p></li>
-</ul>
-<p><em>RETURNS:</em></p>
-<ul>
-<li><p><strong>metadata_dict</strong>: dict</p>
-<p>dictionary of metadata attributes</p></li>
-</ul>
-<p><em>EXAMPLES:</em></p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="hdf5convert.html#cb78-1"></a>group_metadata <span class="op">=</span> conv_object.get_metadata(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
-<pre><code>## {&#39;group1_attr1&#39;: array([123]),
-##  &#39;group1_attr2&#39;: array([b&#39;test string 1&#39;], dtype=&#39;|S14&#39;)}</code></pre>
-<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="hdf5convert.html#cb80-1"></a>dataset_metadata <span class="op">=</span> conv_object.get_metadata(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
-<pre><code>## {&#39;datasetA_attr1&#39;: array([345]),
-##  &#39;datasetA_attr2&#39;: array([b&#39;test string 3&#39;], dtype=&#39;|S14&#39;)}</code></pre>
 
 </div>
 </div>

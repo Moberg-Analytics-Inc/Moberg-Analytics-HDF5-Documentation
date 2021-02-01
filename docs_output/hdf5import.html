@@ -160,9 +160,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#is_dataset"><i class="fa fa-check"></i>is_dataset</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_hdf5file_name"><i class="fa fa-check"></i>get_hdf5file_name</a></li>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name"><i class="fa fa-check"></i>get_name</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#split_hdf5_path"><i class="fa fa-check"></i>split_hdf5_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name_from_hdf5_path"><i class="fa fa-check"></i>get_name_from_hdf5_path</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html"><i class="fa fa-check"></i>HDF5Convert</a><ul>
@@ -184,10 +186,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_column_names"><i class="fa fa-check"></i>get_column_names</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_numpy_values"><i class="fa fa-check"></i>get_numpy_values</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_pandas_values"><i class="fa fa-check"></i>get_pandas_values</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#misc.-functions-1"><i class="fa fa-check"></i>Misc. Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -518,13 +516,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="get_group_dataset_names" class="section level3">
 <h3>get_group_dataset_names</h3>
-<p><strong>get_group_dataset_names(group_path)</strong></p>
+<p><strong>get_group_dataset_names(group_name, group_path)</strong></p>
 <p><em>DESCRIPTION:</em></p>
 <p>Returns a list of dataset names within the group at the “group_path” location in the HDF5 file. Does not include datasets within subgroups.</p>
 <p><em>PARAMETERS:</em></p>
 <ul>
+<li><p><strong>group_name</strong>: str</p>
+<p>name of the group in the HDF5 file</p></li>
 <li><p><strong>group_path</strong>: str</p>
-<p>Path of the group in the HDF5 file</p></li>
+<p>path of the group in the HDF5 file</p></li>
 </ul>
 <p><em>RETURNS:</em></p>
 <ul>
@@ -601,7 +601,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><em>EXAMPLE:</em></p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb34-1"><a href="hdf5import.html#cb34-1"></a>zipped_datasets <span class="op">=</span> hdf5_object.zip_datasets()</span></code></pre></div>
-<pre><code>## &lt;zip object at 0x0000000062C2FBC0&gt;</code></pre>
+<pre><code>## &lt;zip object at 0x0000000060F60D00&gt;</code></pre>
 <pre><code>## [(&#39;Group 1/Dataset A&#39;,
 ##   &#39;Dataset A&#39;,
 ##   &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;),
@@ -645,6 +645,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="misc.-functions" class="section level2">
 <h2>Misc. Functions</h2>
+<div id="get_path" class="section level3">
+<h3>get_path</h3>
+<p><strong>get_metadata(group_name, dataset_name)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns the HDF5 file path to a group or dataset.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>group_name</strong>: str</p>
+<p>group name to get the path to</p></li>
+</ul>
+<p>-or-</p>
+<ul>
+<li><p><strong>dataset_name</strong>: str</p>
+<p>dataset name to get the path to</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>hdf5_path</strong>: str</p>
+<p>path to the group or dataset location in the HDF5 file</p></li>
+</ul>
+<p><em>EXAMPLES:</em></p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="hdf5import.html#cb39-1"></a>hdf5_path <span class="op">=</span> hdf5_object.get_path(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<pre><code>## Group 1</code></pre>
+</div>
+<div id="get_metadata" class="section level3">
+<h3>get_metadata</h3>
+<p><strong>get_metadata(group_name=None, dataset_name=None, dataset_path=None)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns a dictionary of metadata attributes.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>group_name</strong>: str</p>
+<p>group name to get the metadata of</p></li>
+</ul>
+<p>-or-</p>
+<ul>
+<li><p><strong>dataset_name</strong>: str</p>
+<p>dataset name to get the metadata of</p></li>
+</ul>
+<p>-or-</p>
+<ul>
+<li><p><strong>dataset_path</strong>: str</p>
+<p>dataset path to get the metadata of</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>metadata_dict</strong>: dict</p>
+<p>dictionary of metadata attributes</p></li>
+</ul>
+<p><em>EXAMPLES:</em></p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="hdf5import.html#cb41-1"></a>group_metadata <span class="op">=</span> hdf5_object.get_metadata(group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<pre><code>## {&#39;group1_attr1&#39;: array([123]),
+##  &#39;group1_attr2&#39;: array([b&#39;test string 1&#39;], dtype=&#39;|S14&#39;)}</code></pre>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="hdf5import.html#cb43-1"></a>dataset_metadata <span class="op">=</span> hdf5_object.get_metadata(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<pre><code>## {&#39;datasetA_attr1&#39;: array([345]),
+##  &#39;datasetA_attr2&#39;: array([b&#39;test string 3&#39;], dtype=&#39;|S14&#39;)}</code></pre>
+</div>
 <div id="get_hdf5file_name" class="section level3">
 <h3>get_hdf5file_name</h3>
 <p><strong>get_hdf5file_name(hdf5file)</strong></p>
@@ -661,8 +718,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>name of the HDF5 file</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="hdf5import.html#cb39-1"></a>hdf5file_name <span class="op">=</span> hdf5_object.get_hdf5file_name(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="hdf5import.html#cb45-1"></a>hdf5file_name <span class="op">=</span> hdf5_object.get_hdf5file_name(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
 <pre><code>## example.h5</code></pre>
+</div>
+<div id="get_name" class="section level3">
+<h3>get_name</h3>
+<p><strong>get_name(hdf5_path)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns the group or dataset name from the HDF5 file path.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>hdf5_path</strong>: str</p>
+<p>HDF5 path to the group or dataset</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>name</strong>: str</p>
+<p>name of the group or dataset</p></li>
+</ul>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="hdf5import.html#cb47-1"></a>dataset_name <span class="op">=</span> hdf5_object.get_name(hdf5_path<span class="op">=</span><span class="st">&quot;/Group 1/Dataset A&quot;</span>)</span></code></pre></div>
+<pre><code>## Dataset A</code></pre>
 </div>
 <div id="split_hdf5_path" class="section level3">
 <h3>split_hdf5_path</h3>
@@ -680,27 +756,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>list of path components</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="hdf5import.html#cb41-1"></a>split_path <span class="op">=</span> hdf5_object.split_hdf5_path(hdf5_path<span class="op">=</span><span class="st">&quot;Group 1/Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="hdf5import.html#cb49-1"></a>split_path <span class="op">=</span> hdf5_object.split_hdf5_path(hdf5_path<span class="op">=</span><span class="st">&quot;Group 1/Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## [&#39;Group 1&#39;, &#39;Dataset A&#39;]</code></pre>
-</div>
-<div id="get_name_from_hdf5_path" class="section level3">
-<h3>get_name_from_hdf5_path</h3>
-<p><strong>get_name_from_hdf5_path(hdf5_path)</strong></p>
-<p><em>DESCRIPTION:</em></p>
-<p>Returns the group or dataset name from the HDF5 file path.</p>
-<p><em>PARAMETERS:</em></p>
-<ul>
-<li><p><strong>hdf5_path</strong>: str</p>
-<p>HDF5 path to the group or dataset</p></li>
-</ul>
-<p><em>RETURNS:</em></p>
-<ul>
-<li><p><strong>name</strong>: str</p>
-<p>name of the group or dataset</p></li>
-</ul>
-<p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="hdf5import.html#cb43-1"></a>dataset_name <span class="op">=</span> hdf5_object.get_name_from_hdf5_path(hdf5_path<span class="op">=</span><span class="st">&quot;/Group 1/Dataset A&quot;</span>)</span></code></pre></div>
-<pre><code>## Dataset A</code></pre>
 
 </div>
 </div>

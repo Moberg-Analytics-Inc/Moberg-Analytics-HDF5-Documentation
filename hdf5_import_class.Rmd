@@ -378,7 +378,7 @@ pprint.pp(all_dataset_names_dict)
 
 ### get_group_dataset_names
 
-**get_group_dataset_names(group_path)**
+**get_group_dataset_names(group_name, group_path)**
 
 *DESCRIPTION:*
 
@@ -386,9 +386,13 @@ Returns a list of dataset names within the group at the "group_path" location in
 
 *PARAMETERS:*
 
+- **group_name**: str
+
+    name of the group in the HDF5 file
+
 - **group_path**: str
 
-    Path of the group in the HDF5 file
+    path of the group in the HDF5 file
 
 *RETURNS:*
 
@@ -552,6 +556,89 @@ print(dataset_obj_bool)
 
 ## Misc. Functions
 
+### get_path
+
+**get_metadata(group_name, dataset_name)**
+
+*DESCRIPTION:*
+
+Returns the HDF5 file path to a group or dataset.
+
+*PARAMETERS:*
+
+- **group_name**: str
+
+    group name to get the path to
+    
+-or-
+
+- **dataset_name**: str
+
+    dataset name to get the path to
+
+*RETURNS:*
+
+- **hdf5_path**: str
+
+    path to the group or dataset location in the HDF5 file
+    
+*EXAMPLES:*
+
+```{python}
+hdf5_path = hdf5_object.get_path(group_name="Group 1")
+```
+```{python, echo=FALSE}
+print(hdf5_path)
+```
+
+### get_metadata
+
+**get_metadata(group_name=None, dataset_name=None, dataset_path=None)**
+
+*DESCRIPTION:*
+
+Returns a dictionary of metadata attributes.
+
+*PARAMETERS:*
+
+- **group_name**: str
+
+    group name to get the metadata of
+    
+-or-
+
+- **dataset_name**: str
+
+    dataset name to get the metadata of
+    
+-or-
+
+- **dataset_path**: str
+
+    dataset path to get the metadata of
+
+*RETURNS:*
+
+- **metadata_dict**: dict
+
+    dictionary of metadata attributes
+    
+*EXAMPLES:*
+
+```{python}
+group_metadata = hdf5_object.get_metadata(group_name="Group 1")
+```
+```{python, echo=FALSE}
+pprint.pp(group_metadata)
+```
+
+```{python}
+dataset_metadata = hdf5_object.get_metadata(dataset_name="Dataset A")
+```
+```{python, echo=FALSE}
+pprint.pp(dataset_metadata)
+```
+
 ### get_hdf5file_name
 
 **get_hdf5file_name(hdf5file)**
@@ -581,6 +668,35 @@ hdf5file_name = hdf5_object.get_hdf5file_name(hdf5file=hdf5file)
 print(hdf5file_name)
 ```
 
+### get_name
+
+**get_name(hdf5_path)**
+
+*DESCRIPTION:*
+
+Returns the group or dataset name from the HDF5 file path.
+
+*PARAMETERS:*
+
+- **hdf5_path**: str
+
+    HDF5 path to the group or dataset
+
+*RETURNS:*
+
+- **name**: str
+
+    name of the group or dataset
+    
+*EXAMPLE:*
+
+```{python}
+dataset_name = hdf5_object.get_name(hdf5_path="/Group 1/Dataset A")
+```
+```{python, echo=FALSE}
+print(dataset_name)
+```
+
 ### split_hdf5_path
 
 **split_hdf5_path(hdf5_path)**
@@ -608,33 +724,4 @@ split_path = hdf5_object.split_hdf5_path(hdf5_path="Group 1/Dataset A")
 ```
 ```{python, echo=FALSE}
 print(split_path)
-```
-
-### get_name_from_hdf5_path
-
-**get_name_from_hdf5_path(hdf5_path)**
-
-*DESCRIPTION:*
-
-Returns the group or dataset name from the HDF5 file path.
-
-*PARAMETERS:*
-
-- **hdf5_path**: str
-
-    HDF5 path to the group or dataset
-
-*RETURNS:*
-
-- **name**: str
-
-    name of the group or dataset
-    
-*EXAMPLE:*
-
-```{python}
-dataset_name = hdf5_object.get_name_from_hdf5_path(hdf5_path="/Group 1/Dataset A")
-```
-```{python, echo=FALSE}
-print(dataset_name)
 ```
