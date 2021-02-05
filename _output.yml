@@ -5,7 +5,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">HDF5 Import API Documentation</a></li>
       after: |
-        <li><a href="https://www.moberg.com/" target="blank">Moberg Research</a></li>
+        <li><a href="https://moberganalytics.com/" target="blank">Moberg Analytics</a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
     download: ["pdf", "epub"]
 bookdown::pdf_book:

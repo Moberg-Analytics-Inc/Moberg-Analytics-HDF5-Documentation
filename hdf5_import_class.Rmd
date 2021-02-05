@@ -5,16 +5,16 @@ This class contains methods that organize the contents of the HDF5 file into lis
 
 *PARAMETERS:*
 
-- **hdf5file**: HDF5 file
+- **hdf5_filepath**: HDF5 file path
 
-    user-selected HDF5 file
+    path to the user-selected HDF5 file
 
 *ATTRIBUTES:*
 
 - **hdf5file**: HDF5 file
 
     user-selected HDF5 file
-- **hdf5file_name**: HDF5 file name
+- **hdf5_filename**: HDF5 file name
 
     name of the HDF5 file
 - **all_groups_dict**: dict
@@ -30,14 +30,14 @@ This class contains methods that organize the contents of the HDF5 file into lis
 import os
 import h5py
 import pprint
-os.chdir(r"B:\Desktop\Moberg\my_code\active")
-from hdf5_classes import HDF5Import
+os.chdir(r"B:\Desktop\Moberg\github\moberg-portal")
+from upload_portal.utils.hdf5_api import HDF5Import
 ```
 
 ```{python}
 # Instantiate the HDF5Import class
-hdf5file = h5py.File(r"B:\Desktop\Moberg\data\hdf5\example.h5", "r")
-hdf5_object = HDF5Import(hdf5file=hdf5file)
+hdf5_filepath = r"B:\Desktop\Moberg\data\hdf5\example.h5"
+hdf5_object = HDF5Import(hdf5_filepath=hdf5_filepath)
 ```
 
 ## Group Functions
@@ -462,9 +462,9 @@ dataset_metadata = hdf5_object.get_metadata(dataset_name="Dataset A")
 pprint.pp(dataset_metadata)
 ```
 
-### get_hdf5file_name
+### get_hdf5_filename
 
-**get_hdf5file_name(hdf5file)**
+**get_hdf5_filename(hdf5_filepath)**
 
 *DESCRIPTION:*
 
@@ -472,23 +472,23 @@ Parses the HDF5 file path (on the system) and returns the name of the HDF5 file.
 
 *PARAMETERS:*
 
-- **hdf5file**: HDF5 file
+- **hdf5_filepath**: HDF5 file path
 
-    user-selected HDF5 file
+    path to the user-selected HDF5 file
 
 *RETURNS:*
 
-- **hdf5file_name**: str
+- **hdf5_filename**: str
 
     name of the HDF5 file
     
 *EXAMPLE:*
 
 ```{python}
-hdf5file_name = hdf5_object.get_hdf5file_name(hdf5file=hdf5file)
+hdf5_filename = hdf5_object.get_hdf5file_name(hdf5_filepath=hdf5_filepath)
 ```
 ```{python, echo=FALSE}
-print(hdf5file_name)
+print(hdf5_filename)
 ```
 
 ### get_name

@@ -6,9 +6,9 @@ This class contains methods that return various aspects of the HDF5 file to the 
 
 *PARAMETERS:*
 
-- **hdf5_obj**: class object
+- **hdf5_filepath**: HDF5 file path
 
-    instance of the HDF5Import class
+    path to the user-selected HDF5 file
 
 *ATTRIBUTES:*
 
@@ -32,14 +32,14 @@ This class contains methods that return various aspects of the HDF5 file to the 
 import os
 import h5py
 import pprint
-os.chdir(r"B:\Desktop\Moberg\my_code\active")
-from hdf5_classes import HDF5Convert
+os.chdir(r"B:\Desktop\Moberg\github\moberg-portal")
+from upload_portal.utils.hdf5_api import HDF5Convert
 ```
 
 ```{python}
 # Instantiate the HDF5Convert class
-hdf5file = h5py.File(r"B:\Desktop\Moberg\data\hdf5\example.h5", "r")
-conv_object = HDF5Convert(hdf5file=hdf5file)
+hdf5_filepath = r"B:\Desktop\Moberg\data\hdf5\example.h5"
+conv_object = HDF5Convert(hdf5_filepath=hdf5_filepath)
 ```
 
 ## Group Functions
@@ -489,13 +489,13 @@ column_names_list = conv_object.get_column_names(dataset_name="Dataset A")
 print(column_names_list)
 ```
 
-### get_numpy_values
+### get_values
 
-**get_numpy_values(dataset_name=None, dataset_path=None)**
+**get_numpy_values(dataset_name=None, dataset_path=None, matrix_type="pandas")**
 
 *DESCRIPTION:*
 
-Returns a NumPy Array of the values in the dataset.           
+Returns a matrix of the values in the dataset.           
 
 *PARAMETERS:*
 
@@ -508,53 +508,22 @@ Returns a NumPy Array of the values in the dataset.
 - **dataset_path**: str
 
     path of the dataset to get the NumPy Array from
+    
+- **matrix_type**: str
+
+    matrix type to get the dataset values in - "pandas" or "numpy"
 
 *RETURNS:*
 
-- **np_values**: NumPy Array
+- **dataset_values**: NumPy Array
 
-    NumPy Array of dataset values
+    matrix of dataset values
     
 *EXAMPLE:*
 
 ```{python}
-np_values = conv_object.get_numpy_values(dataset_name="Dataset A")
+dataset_values = conv_object.get_values(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
-pprint.pp(np_values)
-```
-
-### get_pandas_values
-
-**get_pandas_values(dataset_name=None, dataset_path=None)**
-
-*DESCRIPTION:*
-
-Returns a Pandas DataFrame of the values in the dataset.           
-
-*PARAMETERS:*
-
-- **dataset_name**: str
-
-    name of the dataset to get the Pandas DataFrame from
-    
-    -or-
-    
-- **dataset_path**: str
-
-    path of the dataset to get the Pandas DataFrame from
-
-*RETURNS:*
-
-- **pd_values**: Pandas DataFrame 
-
-    Pandas DataFrame of dataset values
-    
-*EXAMPLE:*
-
-```{python}
-pd_values = conv_object.get_pandas_values(dataset_name="Dataset A")
-```
-```{python, echo=FALSE}
-pprint.pp(pd_values)
+print(dataset_values)
 ```

@@ -156,7 +156,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a><ul>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_hdf5file_name"><i class="fa fa-check"></i>get_hdf5file_name</a></li>
+<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_hdf5_filename"><i class="fa fa-check"></i>get_hdf5_filename</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name"><i class="fa fa-check"></i>get_name</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#split_hdf5_path"><i class="fa fa-check"></i>split_hdf5_path</a></li>
 <li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#is_group"><i class="fa fa-check"></i>is_group</a></li>
@@ -184,12 +184,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_dataset_dict"><i class="fa fa-check"></i>get_dataset_dict</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_all_subgroup_dataset_names"><i class="fa fa-check"></i>get_all_subgroup_dataset_names</a></li>
 <li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_column_names"><i class="fa fa-check"></i>get_column_names</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_numpy_values"><i class="fa fa-check"></i>get_numpy_values</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_pandas_values"><i class="fa fa-check"></i>get_pandas_values</a></li>
+<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_values"><i class="fa fa-check"></i>get_values</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
-<li><a href="https://www.moberg.com/" target="blank">Moberg Research</a></li>
+<li><a href="https://moberganalytics.com/" target="blank">Moberg Analytics</a></li>
 
 </ul>
 
@@ -214,8 +213,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This class contains methods that organize the contents of the HDF5 file into lists and dictionaries.</p>
 <p><em>PARAMETERS:</em></p>
 <ul>
-<li><p><strong>hdf5file</strong>: HDF5 file</p>
-<p>user-selected HDF5 file</p></li>
+<li><p><strong>hdf5_filepath</strong>: HDF5 file path</p>
+<p>path to the user-selected HDF5 file</p></li>
 </ul>
 <p><em>ATTRIBUTES:</em></p>
 <ul>
@@ -230,8 +229,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><em>EXAMPLE:</em></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="hdf5import.html#cb1-1"></a><span class="co"># Instantiate the HDF5Import class</span></span>
-<span id="cb1-2"><a href="hdf5import.html#cb1-2"></a>hdf5file <span class="op">=</span> h5py.File(<span class="vs">r&quot;B:\Desktop\Moberg\data\hdf5\example.h5&quot;</span>, <span class="st">&quot;r&quot;</span>)</span>
-<span id="cb1-3"><a href="hdf5import.html#cb1-3"></a>hdf5_object <span class="op">=</span> HDF5Import(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
+<span id="cb1-2"><a href="hdf5import.html#cb1-2"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;B:\Desktop\Moberg\data\hdf5\example.h5&quot;</span></span>
+<span id="cb1-3"><a href="hdf5import.html#cb1-3"></a>hdf5_object <span class="op">=</span> HDF5Import(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span></code></pre></div>
 <div id="group-functions" class="section level2">
 <h2>Group Functions</h2>
 <div id="get_all_group_paths" class="section level3">
@@ -574,23 +573,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## {&#39;datasetA_attr1&#39;: array([345]),
 ##  &#39;datasetA_attr2&#39;: array([b&#39;test string 3&#39;], dtype=&#39;|S14&#39;)}</code></pre>
 </div>
-<div id="get_hdf5file_name" class="section level3">
-<h3>get_hdf5file_name</h3>
-<p><strong>get_hdf5file_name(hdf5file)</strong></p>
+<div id="get_hdf5_filename" class="section level3">
+<h3>get_hdf5_filename</h3>
+<p><strong>get_hdf5_filename(hdf5_filepath)</strong></p>
 <p><em>DESCRIPTION:</em></p>
 <p>Parses the HDF5 file path (on the system) and returns the name of the HDF5 file.</p>
 <p><em>PARAMETERS:</em></p>
 <ul>
-<li><p><strong>hdf5file</strong>: HDF5 file</p>
-<p>user-selected HDF5 file</p></li>
+<li><p><strong>hdf5_filepath</strong>: HDF5 file path</p>
+<p>path to the user-selected HDF5 file</p></li>
 </ul>
 <p><em>RETURNS:</em></p>
 <ul>
-<li><p><strong>hdf5file_name</strong>: str</p>
+<li><p><strong>hdf5_filename</strong>: str</p>
 <p>name of the HDF5 file</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="hdf5import.html#cb32-1"></a>hdf5file_name <span class="op">=</span> hdf5_object.get_hdf5file_name(hdf5file<span class="op">=</span>hdf5file)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb32-1"><a href="hdf5import.html#cb32-1"></a>hdf5_filename <span class="op">=</span> hdf5_object.get_hdf5file_name(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span></code></pre></div>
 <pre><code>## example.h5</code></pre>
 </div>
 <div id="get_name" class="section level3">
@@ -718,7 +717,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><em>EXAMPLE:</em></p>
 <div class="sourceCode" id="cb46"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb46-1"><a href="hdf5import.html#cb46-1"></a>zipped_datasets <span class="op">=</span> hdf5_object.zip_datasets()</span></code></pre></div>
-<pre><code>## &lt;zip object at 0x0000000060369300&gt;</code></pre>
+<pre><code>## &lt;zip object at 0x000000006128E080&gt;</code></pre>
 <pre><code>## [(&#39;Group 1/Dataset A&#39;,
 ##   &#39;Dataset A&#39;,
 ##   &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;),
