@@ -207,38 +207,6 @@ subgroup_list = hdf5_object.get_subgroups_list(group_path="/Group 1")
 print(subgroup_list)
 ```
 
-### is_group
-
-**is_group(test_obj)**
-
-*DESCRIPTION:*
-
-Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
-
-*PARAMETERS:*
-
-- **test_obj**: HDF5 class object
-
-    HDF5 class object to check
-
-*RETURNS:*
-
-- **True**
-
-    -or-
-    
-- **False**
-    
-*EXAMPLE:*
-
-```{python}
-group_obj = hdf5_object.get_all_group_objs()[0]
-group_obj_bool = hdf5_object.is_group(test_obj=group_obj)
-```
-```{python, echo=FALSE}
-print(group_obj_bool)
-```
-
 ## Dataset Functions
 
 ### get_all_dataset_paths
@@ -409,156 +377,11 @@ dataset_name_list = hdf5_object.get_group_dataset_names(group_path="Group 1")
 print(dataset_name_list)
 ```
 
-### get_dup_dataset_names
-
-**get_dup_dataset_names()**
-
-*DESCRIPTION:*
-
-Returns a list of all duplicate dataset names in the HDF5 file.
-
-*PARAMETERS:*
-
-none
-
-*RETURNS:*
-
-- **dup_dataset_names_list**: list
-
-    list of all duplicate dataset names
-    
-*EXAMPLE:*
-
-```{python}
-dup_dataset_names_list = hdf5_object.get_dup_dataset_names()
-```
-```{python, echo=FALSE}
-print(dup_dataset_names_list)
-```
-
-### get_dup_dataset_dict
-
-**get_dup_dataset_dict()**
-
-*DESCRIPTION:*
-
-Returns a dictionary of every duplicate dataset name and its associated info from the HDF5 file.
-
-*PARAMETERS:*
-
-none
-
-*RETURNS:*
-
-- **dup_dataset_dict**: dict
-
-    dictionary of every duplicate dataset name and its associated info
-    
-*EXAMPLE:*
-
-```{python}
-dup_dataset_dict = hdf5_object.get_dup_dataset_dict()
-```
-```{python, echo=FALSE}
-pprint.pp(dup_dataset_dict)
-```
-
-### dup_dataset_check
-
-**dup_dataset_check(dataset_name)**
-
-*DESCRIPTION:*
-
-Returns True if "dataset_name" is a duplicate dataset in the HDF5 file. Otherwise returns False.
-
-*PARAMETERS:*
-
-- **dataset_name**: str
-
-    name of the dataset to check 
-    
-*RETURNS:*
-
-- **True**
-
-    -or-
-    
-- **False**
-    
-*EXAMPLE:*
-
-```{python}
-dataset_check = hdf5_object.dup_dataset_check(dataset_name="Dataset A")
-```
-```{python, echo=FALSE}
-print(dataset_check)
-```
-
-### zip_datasets
-
-**zip_datasets()**
-
-*DESCRIPTION:*
-
-Returns a zip object of the dataset_path_list, dataset_name_list, and dataset_list.
-
-*PARAMETERS:*
-
-none
-
-*RETURNS:*
-
-- **zipped_datasets**: zip object
-
-    iterator of a tuple of dataset_path_list, dataset_name_list, and dataset_list
-    
-*EXAMPLE:*
-
-```{python}
-zipped_datasets = hdf5_object.zip_datasets()
-```
-```{python, echo=FALSE}
-print(zipped_datasets)
-pprint.pp([tup for tup in zipped_datasets])
-```
-
-### is_dataset
-
-**is_dataset(test_obj)**
-
-*DESCRIPTION:*
-
-Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
-
-*PARAMETERS:*
-
-- **test_obj**: HDF5 class object
-
-    HDF5 class object to check
-
-*RETURNS:*
-
-- **True**
-
-    -or-
-    
-- **False**
-    
-*EXAMPLE:*
-
-```{python}
-dataset_obj = hdf5_object.get_all_dataset_objs()[0]
-dataset_obj_bool = hdf5_object.is_dataset(test_obj=dataset_obj)
-```
-```{python, echo=FALSE}
-print(dataset_obj_bool)
-```
-
 ## Misc. Functions
 
 ### get_path
 
-**get_metadata(group_name, dataset_name)**
+**get_path(group_name, dataset_name)**
 
 *DESCRIPTION:*
 
@@ -724,4 +547,181 @@ split_path = hdf5_object.split_hdf5_path(hdf5_path="Group 1/Dataset A")
 ```
 ```{python, echo=FALSE}
 print(split_path)
+```
+
+### is_group
+
+**is_group(test_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+group_obj = hdf5_object.get_all_group_objs()[0]
+group_obj_bool = hdf5_object.is_group(test_obj=group_obj)
+```
+```{python, echo=FALSE}
+print(group_obj_bool)
+```
+
+### get_dup_dataset_names
+
+**get_dup_dataset_names()**
+
+*DESCRIPTION:*
+
+Returns a list of all duplicate dataset names in the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **dup_dataset_names_list**: list
+
+    list of all duplicate dataset names
+    
+*EXAMPLE:*
+
+```{python}
+dup_dataset_names_list = hdf5_object.get_dup_dataset_names()
+```
+```{python, echo=FALSE}
+print(dup_dataset_names_list)
+```
+
+### get_dup_dataset_dict
+
+**get_dup_dataset_dict()**
+
+*DESCRIPTION:*
+
+Returns a dictionary of every duplicate dataset name and its associated info from the HDF5 file.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **dup_dataset_dict**: dict
+
+    dictionary of every duplicate dataset name and its associated info
+    
+*EXAMPLE:*
+
+```{python}
+dup_dataset_dict = hdf5_object.get_dup_dataset_dict()
+```
+```{python, echo=FALSE}
+pprint.pp(dup_dataset_dict)
+```
+
+### dup_dataset_check
+
+**dup_dataset_check(dataset_name)**
+
+*DESCRIPTION:*
+
+Returns True if "dataset_name" is a duplicate dataset in the HDF5 file. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **dataset_name**: str
+
+    name of the dataset to check 
+    
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_check = hdf5_object.dup_dataset_check(dataset_name="Dataset A")
+```
+```{python, echo=FALSE}
+print(dataset_check)
+```
+
+### zip_datasets
+
+**zip_datasets()**
+
+*DESCRIPTION:*
+
+Returns a zip object of the dataset_path_list, dataset_name_list, and dataset_list.
+
+*PARAMETERS:*
+
+none
+
+*RETURNS:*
+
+- **zipped_datasets**: zip object
+
+    iterator of a tuple of dataset_path_list, dataset_name_list, and dataset_list
+    
+*EXAMPLE:*
+
+```{python}
+zipped_datasets = hdf5_object.zip_datasets()
+```
+```{python, echo=FALSE}
+print(zipped_datasets)
+pprint.pp([tup for tup in zipped_datasets])
+```
+
+### is_dataset
+
+**is_dataset(test_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "test_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_obj = hdf5_object.get_all_dataset_objs()[0]
+dataset_obj_bool = hdf5_object.is_dataset(test_obj=dataset_obj)
+```
+```{python, echo=FALSE}
+print(dataset_obj_bool)
 ```
