@@ -1,0 +1,174 @@
+# HDF5Helper
+
+*DESCRIPTION:*
+
+This class contains functions for argument, group, dataset, and duplicate checks as well as other 
+methods that add functionality to HDF5Content and HDF5Components.
+
+*PARAMETERS:*
+
+None
+
+*ATTRIBUTES:*
+
+None
+    
+*EXAMPLE:*
+
+```{python, echo=FALSE, results='hide'}
+import h5py
+import pprint
+
+from moberg_analytics_hdf5 import hdf5_tools
+```
+
+```{python}
+# Path to the HDF5 file in your system directory
+hdf5_filepath = r"resources\example.h5"
+# Instantiate the HDF5Content class
+hdf5_content = hdf5_tools.HDF5Content(hdf5_filepath=hdf5_filepath)
+# Instantiate the HDF5Helper class
+hdf5_helper = hdf5_tools.HDF5Helper()
+```
+
+## Group Functions
+
+### check_group_name
+
+**check_group_name(group_names_list, group_name)**
+
+*DESCRIPTION:*
+
+Returns True if "group_name" is a group name in the HDF5 file. Otherwise returns False and raises a GroupNameError.
+
+*PARAMETERS:*
+
+- **group_names_list**: list
+
+    list of group names in the HDF5 file
+    
+- **group_name**: str
+
+    name of the group to check 
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+group_names_list = hdf5_content.get_all_group_names()
+valid_group_name = hdf5_helper.check_group_name(group_names_list, group_name="Group 1")
+
+```
+```{python, echo=FALSE}
+print(valid_group_name)
+```
+
+### is_group
+
+**is_group(hdf5_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "hdf5_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+group_obj = hdf5_content.get_all_group_objs()[0]
+group_obj_bool = hdf5_helper.is_group(hdf5_obj=group_obj)
+```
+```{python, echo=FALSE}
+print(group_obj_bool)
+```
+
+## Dataset Functions
+
+### check_dataset_name
+
+**check_dataset_name(dataset_names_list, dataset_name)**
+
+*DESCRIPTION:*
+
+Returns True if "dataset_name" is a dataset name in the HDF5 file. Otherwise returns False and raises a DatasetNameError.
+
+*PARAMETERS:*
+
+- **dataset_names_list**: list
+
+    list of dataset names in the HDF5 file
+    
+- **dataset_name**: str
+
+    name of the dataset to check 
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_names_list = hdf5_content.get_all_dataset_names()
+valid_dataset_name = hdf5_helper.check_dataset_name(dataset_names_list, dataset_name="Dataset A")
+
+```
+```{python, echo=FALSE}
+print(valid_dataset_name)
+```
+
+### is_dataset
+
+**is_dataset(hdf5_obj)**
+
+*DESCRIPTION:*
+
+Returns True if the "hdf5_obj" object a HDF5 group object. Otherwise returns False.
+
+*PARAMETERS:*
+
+- **test_obj**: HDF5 class object
+
+    HDF5 class object to check
+
+*RETURNS:*
+
+- **True**
+
+    -or-
+    
+- **False**
+    
+*EXAMPLE:*
+
+```{python}
+dataset_obj = hdf5_content.get_all_dataset_objs()[0]
+dataset_obj_bool = hdf5_helper.is_dataset(hdf5_obj=dataset_obj)
+```
+```{python, echo=FALSE}
+print(dataset_obj_bool)
+```

@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <li><a href="./">HDF5 Import API Documentation</a></li>
+        <li><a href="./">Moberg Analytics HDF5 Documentation</a></li>
       after: |
         <li><a href="https://moberganalytics.com/" target="blank">Moberg Analytics</a></li>
     edit: https://github.com/rstudio/bookdown-demo/edit/master/%s

@@ -4,24 +4,24 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>HDF5Convert | HDF5 Import API Documentation</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <title>HDF5Components | Moberg Analytics HDF5 Documentation</title>
+  <meta name="description" content="This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="HDF5Convert | HDF5 Import API Documentation" />
+  <meta property="og:title" content="HDF5Components | Moberg Analytics HDF5 Documentation" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="HDF5Convert | HDF5 Import API Documentation" />
+  <meta name="twitter:title" content="HDF5Components | Moberg Analytics HDF5 Documentation" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook." />
   
 
-<meta name="author" content="Zack Goldblum - Moberg Analytics" />
+<meta name="author" content="Author: Zack Goldblum - Moberg Analytics" />
 
 
 
@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="hdf5import.html"/>
+<link rel="prev" href="hdf5content.html"/>
 <link rel="next" href="hdf5helper.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -130,58 +130,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">HDF5 Import API Documentation</a></li>
+<li><a href="./">Moberg Analytics HDF5 Documentation</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Overview</a><ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-hdf5-file-structure"><i class="fa fa-check"></i>Example HDF5 File Structure</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#revision-history"><i class="fa fa-check"></i>Revision History</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html"><i class="fa fa-check"></i>HDF5Import</a><ul>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#group-functions"><i class="fa fa-check"></i>Group Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_group_paths"><i class="fa fa-check"></i>get_all_group_paths</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_group_objs"><i class="fa fa-check"></i>get_all_group_objs</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_group_names"><i class="fa fa-check"></i>get_all_group_names</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_group_names_dict"><i class="fa fa-check"></i>get_all_group_names_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_group_objs_dict"><i class="fa fa-check"></i>get_all_group_objs_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_subgroups_list"><i class="fa fa-check"></i>get_subgroups_list</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html"><i class="fa fa-check"></i>HDF5Content</a><ul>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#group-functions"><i class="fa fa-check"></i>Group Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_group_paths"><i class="fa fa-check"></i>get_all_group_paths</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_group_objs"><i class="fa fa-check"></i>get_all_group_objs</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_group_names"><i class="fa fa-check"></i>get_all_group_names</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_group_names_dict"><i class="fa fa-check"></i>get_all_group_names_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_group_objs_dict"><i class="fa fa-check"></i>get_all_group_objs_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_subgroups_list"><i class="fa fa-check"></i>get_subgroups_list</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#dataset-functions"><i class="fa fa-check"></i>Dataset Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_dataset_paths"><i class="fa fa-check"></i>get_all_dataset_paths</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_dataset_objs"><i class="fa fa-check"></i>get_all_dataset_objs</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_dataset_names"><i class="fa fa-check"></i>get_all_dataset_names</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_dataset_paths_dict"><i class="fa fa-check"></i>get_all_dataset_paths_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_all_dataset_names_dict"><i class="fa fa-check"></i>get_all_dataset_names_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_group_dataset_names"><i class="fa fa-check"></i>get_group_dataset_names</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#dataset-functions"><i class="fa fa-check"></i>Dataset Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_dataset_paths"><i class="fa fa-check"></i>get_all_dataset_paths</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_dataset_objs"><i class="fa fa-check"></i>get_all_dataset_objs</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_dataset_names"><i class="fa fa-check"></i>get_all_dataset_names</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_dataset_paths_dict"><i class="fa fa-check"></i>get_all_dataset_paths_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_all_dataset_names_dict"><i class="fa fa-check"></i>get_all_dataset_names_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_group_dataset_names"><i class="fa fa-check"></i>get_group_dataset_names</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_hdf5_filename"><i class="fa fa-check"></i>get_hdf5_filename</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_name"><i class="fa fa-check"></i>get_name</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#split_hdf5_path"><i class="fa fa-check"></i>split_hdf5_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_dup_dataset_names"><i class="fa fa-check"></i>get_dup_dataset_names</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#get_dup_dataset_dict"><i class="fa fa-check"></i>get_dup_dataset_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#dup_dataset_check"><i class="fa fa-check"></i>dup_dataset_check</a></li>
-<li class="chapter" data-level="" data-path="hdf5import.html"><a href="hdf5import.html#zip_datasets"><i class="fa fa-check"></i>zip_datasets</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#misc.-functions"><i class="fa fa-check"></i>Misc. Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_path"><i class="fa fa-check"></i>get_path</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_metadata"><i class="fa fa-check"></i>get_metadata</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_hdf5_filename"><i class="fa fa-check"></i>get_hdf5_filename</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_name"><i class="fa fa-check"></i>get_name</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#split_hdf5_path"><i class="fa fa-check"></i>split_hdf5_path</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_dup_dataset_names"><i class="fa fa-check"></i>get_dup_dataset_names</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#get_dup_dataset_dict"><i class="fa fa-check"></i>get_dup_dataset_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#dup_dataset_check"><i class="fa fa-check"></i>dup_dataset_check</a></li>
+<li class="chapter" data-level="" data-path="hdf5content.html"><a href="hdf5content.html#zip_datasets"><i class="fa fa-check"></i>zip_datasets</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html"><i class="fa fa-check"></i>HDF5Convert</a><ul>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#group-functions-1"><i class="fa fa-check"></i>Group Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_group_info"><i class="fa fa-check"></i>get_group_info</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_group_obj"><i class="fa fa-check"></i>get_group_obj</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_subgroup_dict"><i class="fa fa-check"></i>get_subgroup_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_group_dict"><i class="fa fa-check"></i>get_group_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_parent_group_obj"><i class="fa fa-check"></i>get_parent_group_obj</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_parent_group_path"><i class="fa fa-check"></i>get_parent_group_path</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_parent_group_name"><i class="fa fa-check"></i>get_parent_group_name</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_eeg_matrix"><i class="fa fa-check"></i>get_eeg_matrix</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html"><i class="fa fa-check"></i>HDF5Components</a><ul>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#group-functions-1"><i class="fa fa-check"></i>Group Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_group_info"><i class="fa fa-check"></i>get_group_info</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_group_obj"><i class="fa fa-check"></i>get_group_obj</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_subgroup_dict"><i class="fa fa-check"></i>get_subgroup_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_group_dict"><i class="fa fa-check"></i>get_group_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_parent_group_obj"><i class="fa fa-check"></i>get_parent_group_obj</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_parent_group_path"><i class="fa fa-check"></i>get_parent_group_path</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_parent_group_name"><i class="fa fa-check"></i>get_parent_group_name</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_eeg_matrix"><i class="fa fa-check"></i>get_eeg_matrix</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#dataset-functions-1"><i class="fa fa-check"></i>Dataset Functions</a><ul>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_dataset_info"><i class="fa fa-check"></i>get_dataset_info</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_dataset_obj"><i class="fa fa-check"></i>get_dataset_obj</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_dataset_dict"><i class="fa fa-check"></i>get_dataset_dict</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_column_names"><i class="fa fa-check"></i>get_column_names</a></li>
-<li class="chapter" data-level="" data-path="hdf5convert.html"><a href="hdf5convert.html#get_values"><i class="fa fa-check"></i>get_values</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#dataset-functions-1"><i class="fa fa-check"></i>Dataset Functions</a><ul>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_dataset_info"><i class="fa fa-check"></i>get_dataset_info</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_dataset_obj"><i class="fa fa-check"></i>get_dataset_obj</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_dataset_dict"><i class="fa fa-check"></i>get_dataset_dict</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_column_names"><i class="fa fa-check"></i>get_column_names</a></li>
+<li class="chapter" data-level="" data-path="hdf5components.html"><a href="hdf5components.html#get_values"><i class="fa fa-check"></i>get_values</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="hdf5helper.html"><a href="hdf5helper.html"><i class="fa fa-check"></i>HDF5Helper</a><ul>
@@ -206,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HDF5 Import API Documentation</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Moberg Analytics HDF5 Documentation</a>
           </h1>
         </div>
 
@@ -214,10 +215,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="hdf5convert" class="section level1">
-<h1>HDF5Convert</h1>
+<div id="hdf5components" class="section level1">
+<h1>HDF5Components</h1>
 <p><em>DESCRIPTION:</em></p>
-<p>This class contains methods that return various aspects of the HDF5 file to the user including groups, datasets, Pandas/NumPy matrices of dataset values, metadata, and structured dictionaries.</p>
+<p>This class contains functions that return various components of the HDF5 file to the user including groups, datasets, Pandas/NumPy matrices of dataset values, metadata, and structured dictionaries.</p>
 <p><em>PARAMETERS:</em></p>
 <ul>
 <li><p><strong>hdf5_filepath</strong>: HDF5 file path</p>
@@ -225,19 +226,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p><em>ATTRIBUTES:</em></p>
 <ul>
-<li><p><strong>hdf5_obj</strong>: class object</p>
-<p>instance of the HDF5Import class</p></li>
 <li><p><strong>hdf5file</strong>: HDF5 file</p>
 <p>user-selected HDF5 file</p></li>
-<li><p><strong>all_groups_dict</strong>: dict</p>
-<p>dictionary of every group and its associated info</p></li>
-<li><p><strong>all_datasets_dict</strong>: dict</p>
-<p>dictionary of every dataset and its associated info</p></li>
+<li><p><strong>all_group_names_dict</strong>: dict</p>
+<p>dictionary of every group and its associated info. Group names are keys.</p></li>
+<li><p><strong>all_dataset_names_dict</strong>: dict</p>
+<p>dictionary of all datasets and their associated info. Datasetset names are keys.</p></li>
+<li><p><strong>all_dataset_paths_dict</strong>: dict</p>
+<p>dictionary of all datasets and their associated info. Datasetset paths are keys.</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="hdf5convert.html#cb48-1"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;B:\Desktop\Moberg\data\hdf5\example.h5&quot;</span></span>
-<span id="cb48-2"><a href="hdf5convert.html#cb48-2"></a><span class="co"># Instantiate the HDF5Convert class</span></span>
-<span id="cb48-3"><a href="hdf5convert.html#cb48-3"></a>conv_object <span class="op">=</span> HDF5Convert(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb48-1"><a href="hdf5components.html#cb48-1"></a><span class="co"># Path to the HDF5 file in your system directory</span></span>
+<span id="cb48-2"><a href="hdf5components.html#cb48-2"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;resources\example.h5&quot;</span></span>
+<span id="cb48-3"><a href="hdf5components.html#cb48-3"></a><span class="co"># Instantiate the HDF5Components class</span></span>
+<span id="cb48-4"><a href="hdf5components.html#cb48-4"></a>hdf5_comps <span class="op">=</span> hdf5_tools.HDF5Components(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span></code></pre></div>
 <div id="group-functions-1" class="section level2">
 <h2>Group Functions</h2>
 <div id="get_group_info" class="section level3">
@@ -256,13 +258,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of group info</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="hdf5convert.html#cb49-1"></a>group_info <span class="op">=</span> conv_object.get_group_info(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="hdf5components.html#cb49-1"></a>group_info <span class="op">=</span> hdf5_comps.get_group_info(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##  &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##  &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
 ##                     &#39;subgroup1_attr2&#39;: array([b&#39;test string 2&#39;], dtype=&#39;|S14&#39;)},
 ##  &#39;subgroups&#39;: {},
-##  &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;}}</code></pre>
+##  &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;}}</code></pre>
 </div>
 <div id="get_group_obj" class="section level3">
 <h3>get_group_obj</h3>
@@ -280,7 +282,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>instance of the HDF5 group class</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="hdf5convert.html#cb51-1"></a>group_obj <span class="op">=</span> conv_object.get_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="hdf5components.html#cb51-1"></a>group_obj <span class="op">=</span> hdf5_comps.get_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;HDF5 group &quot;/Group 1/Subgroup 1&quot; (1 members)&gt;</code></pre>
 </div>
 <div id="get_subgroup_dict" class="section level3">
@@ -299,13 +301,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of subgroup info for each subgroup in the group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="hdf5convert.html#cb53-1"></a>subgroup_dict <span class="op">=</span> conv_object.get_subgroup_dict(group_path<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="hdf5components.html#cb53-1"></a>subgroup_dict <span class="op">=</span> hdf5_comps.get_subgroup_dict(group_path<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;Subgroup 1&#39;: {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##                 &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##                 &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
 ##                                    &#39;subgroup1_attr2&#39;: array([b&#39;test string 2&#39;], dtype=&#39;|S14&#39;)},
 ##                 &#39;subgroups&#39;: {},
-##                 &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;}}}</code></pre>
+##                 &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;}}}</code></pre>
 </div>
 <div id="get_group_dict" class="section level3">
 <h3>get_group_dict</h3>
@@ -323,20 +325,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>dictionary of group info, subgroups, and datasets</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="hdf5convert.html#cb55-1"></a>group_dict <span class="op">=</span> conv_object.get_group_dict(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="hdf5components.html#cb55-1"></a>group_dict <span class="op">=</span> hdf5_comps.get_group_dict(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;group_name&#39;: &#39;Subgroup 1&#39;,
 ##  &#39;group_path&#39;: &#39;Group 1/Subgroup 1&#39;,
 ##  &#39;group_metadata&#39;: {&#39;subgroup1_attr1&#39;: array([234]),
 ##                     &#39;subgroup1_attr2&#39;: array([b&#39;test string 2&#39;], dtype=&#39;|S14&#39;)},
 ##  &#39;subgroups&#39;: {},
-##  &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;},
+##  &#39;datasets&#39;: {&#39;Dataset B&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;},
 ##  &#39;subgroup_dict&#39;: {},
 ##  &#39;dataset_dict&#39;: {&#39;Dataset B&#39;: {&#39;dataset_name&#39;: None,
 ##                                 &#39;dataset_path&#39;: &#39;Group 1/Subgroup 1/Dataset B&#39;,
-##                                 &#39;dataset_metadata&#39;: {&#39;datasetB_Attr1&#39;: array([456]),
+##                                 &#39;dataset_metadata&#39;: {&#39;datasetB_attr1&#39;: array([456]),
 ##                                                      &#39;datasetB_attr2&#39;: array([b&#39;test string 4&#39;], dtype=&#39;|S14&#39;)},
 ##                                 &#39;column_names&#39;: [],
-##                                 &#39;dataset&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;}}}</code></pre>
+##                                 &#39;dataset&#39;: &lt;HDF5 dataset &quot;Dataset B&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;}}}</code></pre>
 </div>
 <div id="get_parent_group_obj" class="section level3">
 <h3>get_parent_group_obj</h3>
@@ -360,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>instance of the class object of the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="hdf5convert.html#cb57-1"></a>parent_group_obj <span class="op">=</span> conv_object.get_parent_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="hdf5components.html#cb57-1"></a>parent_group_obj <span class="op">=</span> hdf5_comps.get_parent_group_obj(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## &lt;HDF5 group &quot;/Group 1&quot; (2 members)&gt;</code></pre>
 </div>
 <div id="get_parent_group_path" class="section level3">
@@ -385,7 +387,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>path in HDF5 file to the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="hdf5convert.html#cb59-1"></a>parent_group_path <span class="op">=</span> conv_object.get_parent_group_path(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="hdf5components.html#cb59-1"></a>parent_group_path <span class="op">=</span> hdf5_comps.get_parent_group_path(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## /Group 1</code></pre>
 </div>
 <div id="get_parent_group_name" class="section level3">
@@ -410,14 +412,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>name of the parent group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="hdf5convert.html#cb61-1"></a>parent_group_name <span class="op">=</span> conv_object.get_parent_group_name(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="hdf5components.html#cb61-1"></a>parent_group_name <span class="op">=</span> hdf5_comps.get_parent_group_name(group_name<span class="op">=</span><span class="st">&quot;Subgroup 1&quot;</span>)</span></code></pre></div>
 <pre><code>## Group 1</code></pre>
 </div>
 <div id="get_eeg_matrix" class="section level3">
 <h3>get_eeg_matrix</h3>
 <p><strong>get_eeg_matrix(group_name, matrix_type=“pandas”)</strong></p>
 <p><em>DESCRIPTION:</em></p>
-<p>Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. Returns a matrix of all EEG channel values for the following CNS groups: Impedance, NeonatalParamas, SampleSeries</p>
+<p>Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. Returns a matrix of all EEG channel values for the following CNS groups: Impedance, NeonatalParamas, SampleSeries.</p>
 <p><em>PARAMETERS:</em></p>
 <ul>
 <li><p><strong>group_name</strong>: str</p>
@@ -432,8 +434,8 @@ default value: “pandas”</p></li>
 <p>matrix of all EEG channel values of a group</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="hdf5convert.html#cb63-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: need to create sample HDF5 file with EEG data</span></span>
-<span id="cb63-2"><a href="hdf5convert.html#cb63-2"></a><span class="co">#eeg_matrix = conv_object.get_eeg_matrix(group_name=&quot;SampleSeries&quot;, #matrix_type=&quot;pandas&quot;)</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="hdf5components.html#cb63-1"></a><span class="co"># </span><span class="al">TODO</span><span class="co">: need to create sample HDF5 file with EEG data</span></span>
+<span id="cb63-2"><a href="hdf5components.html#cb63-2"></a><span class="co">#eeg_matrix = hdf5_comps.get_eeg_matrix(group_name=&quot;SampleSeries&quot;, #matrix_type=&quot;pandas&quot;)</span></span></code></pre></div>
 </div>
 </div>
 <div id="dataset-functions-1" class="section level2">
@@ -457,7 +459,7 @@ default value: “pandas”</p></li>
 <p>dictionary of dataset info</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="hdf5convert.html#cb64-1"></a>dataset_info_dict <span class="op">=</span> conv_object.get_dataset_info(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb64-1"><a href="hdf5components.html#cb64-1"></a>dataset_info_dict <span class="op">=</span> hdf5_comps.get_dataset_info(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;dataset_name&#39;: &#39;Dataset A&#39;,
 ##  &#39;dataset_path&#39;: &#39;Group 1/Dataset A&#39;,
 ##  &#39;dataset_metadata&#39;: {&#39;datasetA_attr1&#39;: array([345]),
@@ -483,8 +485,8 @@ default value: “pandas”</p></li>
 <p>instance of the HDF5 dataset class</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="hdf5convert.html#cb66-1"></a>dataset_obj <span class="op">=</span> conv_object.get_dataset_obj(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
-<pre><code>## &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb66-1"><a href="hdf5components.html#cb66-1"></a>dataset_obj <span class="op">=</span> hdf5_comps.get_dataset_obj(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<pre><code>## &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;</code></pre>
 </div>
 <div id="get_dataset_dict" class="section level3">
 <h3>get_dataset_dict</h3>
@@ -505,13 +507,13 @@ default value: “pandas”</p></li>
 <p>dictionary of dataset info and values</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="hdf5convert.html#cb68-1"></a>dataset_dict <span class="op">=</span> conv_object.get_dataset_dict(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="hdf5components.html#cb68-1"></a>dataset_dict <span class="op">=</span> hdf5_comps.get_dataset_dict(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## {&#39;dataset_name&#39;: None,
 ##  &#39;dataset_path&#39;: &#39;Group 1/Dataset A&#39;,
 ##  &#39;dataset_metadata&#39;: {&#39;datasetA_attr1&#39;: array([345]),
 ##                       &#39;datasetA_attr2&#39;: array([b&#39;test string 3&#39;], dtype=&#39;|S14&#39;)},
 ##  &#39;column_names&#39;: [],
-##  &#39;dataset&#39;: &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 1), type &quot;&lt;i4&quot;&gt;}</code></pre>
+##  &#39;dataset&#39;: &lt;HDF5 dataset &quot;Dataset A&quot;: shape (1, 5), type &quot;&lt;i4&quot;&gt;}</code></pre>
 </div>
 <div id="get_column_names" class="section level3">
 <h3>get_column_names</h3>
@@ -532,7 +534,7 @@ default value: “pandas”</p></li>
 <p>list of column names</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="hdf5convert.html#cb70-1"></a>column_names_list <span class="op">=</span> conv_object.get_column_names(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="hdf5components.html#cb70-1"></a>column_names_list <span class="op">=</span> hdf5_comps.get_column_names(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## []</code></pre>
 </div>
 <div id="get_values" class="section level3">
@@ -556,9 +558,9 @@ default value: “pandas”</p></li>
 <p>matrix of dataset values</p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="hdf5convert.html#cb72-1"></a>dataset_values <span class="op">=</span> conv_object.get_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
-<pre><code>##    0
-## 0  0</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="hdf5components.html#cb72-1"></a>dataset_values <span class="op">=</span> hdf5_comps.get_values(dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<pre><code>##    0  1  2  3  4
+## 0  0  1  2  3  4</code></pre>
 
 </div>
 </div>
@@ -568,7 +570,7 @@ default value: “pandas”</p></li>
           </div>
         </div>
       </div>
-<a href="hdf5import.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="hdf5content.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="hdf5helper.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -600,7 +602,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/hdf5_convert_class.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/hdf5_components.Rmd",
 "text": "Edit"
 },
 "history": {

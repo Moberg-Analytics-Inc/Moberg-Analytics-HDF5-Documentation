@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Moberg Analytics HDF5 Documentation</title>
+  <title>HDF5Helper | Moberg Analytics HDF5 Documentation</title>
   <meta name="description" content="This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Moberg Analytics HDF5 Documentation" />
+  <meta property="og:title" content="HDF5Helper | Moberg Analytics HDF5 Documentation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Moberg Analytics HDF5 Documentation" />
+  <meta name="twitter:title" content="HDF5Helper | Moberg Analytics HDF5 Documentation" />
   
   <meta name="twitter:description" content="This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="hdf5components.html"/>
 
-<link rel="next" href="hdf5content.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -215,69 +215,116 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Moberg Analytics HDF5 Documentation</h1>
-<p class="author"><em>Author: Zack Goldblum - Moberg Analytics</em></p>
-</div>
-<div id="overview" class="section level1">
-<h1>Overview</h1>
-<p>This documentation details how to use the functions available in the <a href="link_to_package">Moberg-Analytics-HDF5 package</a>. The Moberg-Analytics-HDF5 package provides user-friendly functions organized into classes for reading HDF5 file content and components into Python. It is built on top of the <a href="https://www.h5py.org/">h5py package</a> which interfaces directly with the HDF5 file.</p>
-<p>The three <strong>HDF5Content</strong>, <strong>HDF5Components</strong>, and <strong>HDF5Helper</strong> sections in the left-hand navigation bar correspond to the three classes within the hdf5_tools module:</p>
+<div id="hdf5helper" class="section level1">
+<h1>HDF5Helper</h1>
+<p><em>DESCRIPTION:</em></p>
+<p>This class contains functions for argument, group, dataset, and duplicate checks as well as other
+methods that add functionality to HDF5Content and HDF5Components.</p>
+<p><em>PARAMETERS:</em></p>
+<p>None</p>
+<p><em>ATTRIBUTES:</em></p>
+<p>None</p>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="hdf5helper.html#cb74-1"></a><span class="co"># Path to the HDF5 file in your system directory</span></span>
+<span id="cb74-2"><a href="hdf5helper.html#cb74-2"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;resources\example.h5&quot;</span></span>
+<span id="cb74-3"><a href="hdf5helper.html#cb74-3"></a><span class="co"># Instantiate the HDF5Content class</span></span>
+<span id="cb74-4"><a href="hdf5helper.html#cb74-4"></a>hdf5_content <span class="op">=</span> hdf5_tools.HDF5Content(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span>
+<span id="cb74-5"><a href="hdf5helper.html#cb74-5"></a><span class="co"># Instantiate the HDF5Helper class</span></span>
+<span id="cb74-6"><a href="hdf5helper.html#cb74-6"></a>hdf5_helper <span class="op">=</span> hdf5_tools.HDF5Helper()</span></code></pre></div>
+<div id="group-functions-2" class="section level2">
+<h2>Group Functions</h2>
+<div id="check_group_name" class="section level3">
+<h3>check_group_name</h3>
+<p><strong>check_group_name(group_names_list, group_name)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns True if “group_name” is a group name in the HDF5 file. Otherwise returns False and raises a GroupNameError.</p>
+<p><em>PARAMETERS:</em></p>
 <ul>
-<li><p><strong>HDF5Content</strong> contains functions that organize the contents of the HDF5 file into lists and dictionaries.</p></li>
-<li><p><strong>HDF5Components</strong> contains functions that return various components of the HDF5 file to the user including groups, datasets, Pandas/NumPy matrices of dataset values, metadata, and structured dictionaries.</p></li>
-<li><p><strong>HDF5Helper</strong> contains functions for argument, group, dataset, and duplicate checks as well as other methods that add functionality to HDF5Content and HDF5Components.</p></li>
+<li><p><strong>group_names_list</strong>: list</p>
+<p>list of group names in the HDF5 file</p></li>
+<li><p><strong>group_name</strong>: str</p>
+<p>name of the group to check</p></li>
 </ul>
-<p>Each class section is further divided into <strong>Group Functions</strong>, <strong>Dataset Functions</strong>, and <strong>Misc. Functions</strong> sections that contain the relevant functions for working with groups, datasets, or other aspects of the HDF5 file. Every function has a description that details what it does, parameters it accepts (if any), and what it returns when called. There are also code examples that demonstrate how the function is called and what it returns. All of the code examples use the example.h5 HDF5 file, the structure of which is shown below.</p>
-<div id="example-hdf5-file-structure" class="section level2">
-<h2>Example HDF5 File Structure</h2>
-<div class="figure">
-<img src="resources/example_file_structure.jpg" alt="" />
-<p class="caption">example.h5 in HDFView 3.1.1</p>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>True</strong></p>
+<p>-or-</p></li>
+<li><p><strong>False</strong></p></li>
+</ul>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="hdf5helper.html#cb75-1"></a>group_names_list <span class="op">=</span> hdf5_content.get_all_group_names()</span>
+<span id="cb75-2"><a href="hdf5helper.html#cb75-2"></a>valid_group_name <span class="op">=</span> hdf5_helper.check_group_name(group_names_list, group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<pre><code>## True</code></pre>
+</div>
+<div id="is_group" class="section level3">
+<h3>is_group</h3>
+<p><strong>is_group(hdf5_obj)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns True if the “hdf5_obj” object a HDF5 group object. Otherwise returns False.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>test_obj</strong>: HDF5 class object</p>
+<p>HDF5 class object to check</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>True</strong></p>
+<p>-or-</p></li>
+<li><p><strong>False</strong></p></li>
+</ul>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="hdf5helper.html#cb77-1"></a>group_obj <span class="op">=</span> hdf5_content.get_all_group_objs()[<span class="dv">0</span>]</span>
+<span id="cb77-2"><a href="hdf5helper.html#cb77-2"></a>group_obj_bool <span class="op">=</span> hdf5_helper.is_group(hdf5_obj<span class="op">=</span>group_obj)</span></code></pre></div>
+<pre><code>## True</code></pre>
 </div>
 </div>
-<div id="revision-history" class="section level2">
-<h2>Revision History</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-Date
-</th>
-<th style="text-align:left;">
-Revision Number
-</th>
-<th style="text-align:left;">
-Description
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-01/08/2021
-</td>
-<td style="text-align:left;">
-1.0
-</td>
-<td style="text-align:left;">
-Documentation created.
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-03/05/2021
-</td>
-<td style="text-align:left;">
-2.0
-</td>
-<td style="text-align:left;">
-Updated for package release.
-</td>
-</tr>
-</tbody>
-</table>
+<div id="dataset-functions-2" class="section level2">
+<h2>Dataset Functions</h2>
+<div id="check_dataset_name" class="section level3">
+<h3>check_dataset_name</h3>
+<p><strong>check_dataset_name(dataset_names_list, dataset_name)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns True if “dataset_name” is a dataset name in the HDF5 file. Otherwise returns False and raises a DatasetNameError.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>dataset_names_list</strong>: list</p>
+<p>list of dataset names in the HDF5 file</p></li>
+<li><p><strong>dataset_name</strong>: str</p>
+<p>name of the dataset to check</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>True</strong></p>
+<p>-or-</p></li>
+<li><p><strong>False</strong></p></li>
+</ul>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="hdf5helper.html#cb79-1"></a>dataset_names_list <span class="op">=</span> hdf5_content.get_all_dataset_names()</span>
+<span id="cb79-2"><a href="hdf5helper.html#cb79-2"></a>valid_dataset_name <span class="op">=</span> hdf5_helper.check_dataset_name(dataset_names_list, dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<pre><code>## True</code></pre>
+</div>
+<div id="is_dataset" class="section level3">
+<h3>is_dataset</h3>
+<p><strong>is_dataset(hdf5_obj)</strong></p>
+<p><em>DESCRIPTION:</em></p>
+<p>Returns True if the “hdf5_obj” object a HDF5 group object. Otherwise returns False.</p>
+<p><em>PARAMETERS:</em></p>
+<ul>
+<li><p><strong>test_obj</strong>: HDF5 class object</p>
+<p>HDF5 class object to check</p></li>
+</ul>
+<p><em>RETURNS:</em></p>
+<ul>
+<li><p><strong>True</strong></p>
+<p>-or-</p></li>
+<li><p><strong>False</strong></p></li>
+</ul>
+<p><em>EXAMPLE:</em></p>
+<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="hdf5helper.html#cb81-1"></a>dataset_obj <span class="op">=</span> hdf5_content.get_all_dataset_objs()[<span class="dv">0</span>]</span>
+<span id="cb81-2"><a href="hdf5helper.html#cb81-2"></a>dataset_obj_bool <span class="op">=</span> hdf5_helper.is_dataset(hdf5_obj<span class="op">=</span>dataset_obj)</span></code></pre></div>
+<pre><code>## True</code></pre>
 
+</div>
 </div>
 </div>
             </section>
@@ -285,8 +332,8 @@ Updated for package release.
           </div>
         </div>
       </div>
+<a href="hdf5components.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="hdf5content.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -317,7 +364,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/index.Rmd",
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/hdf5_helper.Rmd",
 "text": "Edit"
 },
 "history": {

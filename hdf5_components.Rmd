@@ -1,8 +1,8 @@
-# HDF5Convert
+# HDF5Components
 
 *DESCRIPTION:*
 
-This class contains methods that return various aspects of the HDF5 file to the user including groups, datasets, Pandas/NumPy matrices of dataset values, metadata, and structured dictionaries.
+This class contains functions that return various components of the HDF5 file to the user including groups, datasets, Pandas/NumPy matrices of dataset values, metadata, and structured dictionaries.
 
 *PARAMETERS:*
 
@@ -12,34 +12,34 @@ This class contains methods that return various aspects of the HDF5 file to the 
 
 *ATTRIBUTES:*
 
-- **hdf5_obj**: class object
-
-    instance of the HDF5Import class
-
-- **hdf5file**: HDF5 file 
+- **hdf5file**: HDF5 file
 
     user-selected HDF5 file
-- **all_groups_dict**: dict
+- **all_group_names_dict**: dict
 
-    dictionary of every group and its associated info
-- **all_datasets_dict**: dict
+    dictionary of every group and its associated info. Group names are keys.
 
-    dictionary of every dataset and its associated info
+- **all_dataset_names_dict**: dict
+
+    dictionary of all datasets and their associated info. Datasetset names are keys.
+- **all_dataset_paths_dict**: dict
+
+    dictionary of all datasets and their associated info. Datasetset paths are keys.
     
 *EXAMPLE:*
 
 ```{python, echo=FALSE, results='hide'}
-import os
 import h5py
 import pprint
-os.chdir(r"B:\Desktop\Moberg\github\moberg-portal")
-from upload_portal.utils.hdf5_api import HDF5Convert
+
+from moberg_analytics_hdf5 import hdf5_tools
 ```
 
 ```{python}
-# Instantiate the HDF5Convert class
-hdf5_filepath = r"B:\Desktop\Moberg\data\hdf5\example.h5"
-conv_object = HDF5Convert(hdf5_filepath=hdf5_filepath)
+# Path to the HDF5 file in your system directory
+hdf5_filepath = r"resources\example.h5"
+# Instantiate the HDF5Components class
+hdf5_comps = hdf5_tools.HDF5Components(hdf5_filepath=hdf5_filepath)
 ```
 
 ## Group Functions
@@ -67,7 +67,7 @@ Returns a dictionary of the group info.
 *EXAMPLE:*
 
 ```{python}
-group_info = conv_object.get_group_info(group_name="Subgroup 1")
+group_info = hdf5_comps.get_group_info(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 pprint.pp(group_info)
@@ -96,7 +96,7 @@ Returns the HDF5 group class object for the "group_name" group.
 *EXAMPLE:*
 
 ```{python}
-group_obj = conv_object.get_group_obj(group_name="Subgroup 1")
+group_obj = hdf5_comps.get_group_obj(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 print(group_obj)
@@ -125,7 +125,7 @@ Returns a dictionary of subgroup info for each subgroup in the group at the grou
 *EXAMPLE:*
 
 ```{python}
-subgroup_dict = conv_object.get_subgroup_dict(group_path="Group 1")
+subgroup_dict = hdf5_comps.get_subgroup_dict(group_path="Group 1")
 ```
 ```{python, echo=FALSE}
 pprint.pp(subgroup_dict)
@@ -154,7 +154,7 @@ Returns a dictionary of the group info and its subgroups, and datasets.
 *EXAMPLE:*
 
 ```{python}
-group_dict = conv_object.get_group_dict(group_name="Subgroup 1")
+group_dict = hdf5_comps.get_group_dict(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 pprint.pp(group_dict)
@@ -195,7 +195,7 @@ Returns the parent group class object of the dataset or group.
 *EXAMPLE:*
 
 ```{python}
-parent_group_obj = conv_object.get_parent_group_obj(group_name="Subgroup 1")
+parent_group_obj = hdf5_comps.get_parent_group_obj(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 print(parent_group_obj)
@@ -236,7 +236,7 @@ Returns the path of the parent group of the dataset or group.
 *EXAMPLE:*
 
 ```{python}
-parent_group_path = conv_object.get_parent_group_path(group_name="Subgroup 1")
+parent_group_path = hdf5_comps.get_parent_group_path(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 print(parent_group_path)
@@ -277,7 +277,7 @@ Returns the path of the parent group of the dataset or group.
 *EXAMPLE:*
 
 ```{python}
-parent_group_name = conv_object.get_parent_group_name(group_name="Subgroup 1")
+parent_group_name = hdf5_comps.get_parent_group_name(group_name="Subgroup 1")
 ```
 ```{python, echo=FALSE}
 print(parent_group_name)
@@ -289,7 +289,7 @@ print(parent_group_name)
 
 *DESCRIPTION:*
 
-Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. Returns a matrix of all EEG channel values for the following CNS groups: Impedance, NeonatalParamas, SampleSeries          
+Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. Returns a matrix of all EEG channel values for the following CNS groups: Impedance, NeonatalParamas, SampleSeries.          
 
 *PARAMETERS:*
 
@@ -312,7 +312,7 @@ Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. 
 
 ```{python}
 # TODO: need to create sample HDF5 file with EEG data
-#eeg_matrix = conv_object.get_eeg_matrix(group_name="SampleSeries", #matrix_type="pandas")
+#eeg_matrix = hdf5_comps.get_eeg_matrix(group_name="SampleSeries", #matrix_type="pandas")
 ```
 ```{python, echo=FALSE}
 #pprint.pp(eeg_matrix)
@@ -349,7 +349,7 @@ Returns a dictionary of the dataset info.
 *EXAMPLE:*
 
 ```{python}
-dataset_info_dict = conv_object.get_dataset_info(dataset_name="Dataset A")
+dataset_info_dict = hdf5_comps.get_dataset_info(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
 pprint.pp(dataset_info_dict)
@@ -384,7 +384,7 @@ Returns the HDF5 dataset class object for the "dataset_name" dataset.
 *EXAMPLE:*
 
 ```{python}
-dataset_obj = conv_object.get_dataset_obj(dataset_name="Dataset A")
+dataset_obj = hdf5_comps.get_dataset_obj(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
 print(dataset_obj)
@@ -419,39 +419,10 @@ Returns a dictionary of the dataset info and values.
 *EXAMPLE:*
 
 ```{python}
-dataset_dict = conv_object.get_dataset_dict(dataset_name="Dataset A")
+dataset_dict = hdf5_comps.get_dataset_dict(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
 pprint.pp(dataset_dict)
-```
-
-### get_all_subgroup_dataset_names
-
-**get_all_subgroup_dataset_names(group_name)**
-
-*DESCRIPTION:*
-
-Returns a list of all dataset names from the subgroups within the "group_name" group. This is a list of only dataset names within the subgroups, it does not include dataset names in the "group_name" group itself.          
-
-*PARAMETERS:*
-
-- **group_name**: str
-
-    name of the group that contains the subgroups
-
-*RETURNS:*
-
-- **subgroup_dataset_names**: list
-
-    list of the dataset names within the subgroups 
-    
-*EXAMPLE:*
-
-```{python}
-subgroup_dataset_names = conv_object.get_all_subgroup_dataset_names(group_name="Group 1")
-```
-```{python, echo=FALSE}
-print(subgroup_dataset_names)
 ```
 
 ### get_column_names
@@ -483,7 +454,7 @@ Returns a list of dataset column names.
 *EXAMPLE:*
 
 ```{python}
-column_names_list = conv_object.get_column_names(dataset_name="Dataset A")
+column_names_list = hdf5_comps.get_column_names(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
 print(column_names_list)
@@ -522,7 +493,7 @@ Returns a matrix of the values in the dataset.
 *EXAMPLE:*
 
 ```{python}
-dataset_values = conv_object.get_values(dataset_name="Dataset A")
+dataset_values = hdf5_comps.get_values(dataset_name="Dataset A")
 ```
 ```{python, echo=FALSE}
 print(dataset_values)
