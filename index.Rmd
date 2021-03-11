@@ -6,7 +6,7 @@ output:
   bookdown::gitbook:
     number_sections: false
 github-repo: https://github.com/Moberg-Analytics-Inc/Moberg-Analytics-HDF5-Documentation
-description: "This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook."
+description: "Documentation for the Moberg Analytics HDF5 package."
 ---
 
 # Overview
