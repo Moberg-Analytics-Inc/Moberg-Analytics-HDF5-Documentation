@@ -1,5 +1,5 @@
 book_filename: "HDF5 API Documentation"
-output_dir: docs_output
+output_dir: docs
 delete_merged_file: true
 rmd_files: ["index.Rmd", "hdf5_content.Rmd", "hdf5_components.Rmd", "hdf5_helper.Rmd"]
 

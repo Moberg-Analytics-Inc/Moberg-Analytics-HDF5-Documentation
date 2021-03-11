@@ -7,11 +7,7 @@ output:
     number_sections: false
 header-includes:
     - \usepackage[labelformat=empty]{caption}
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: rstudio/bookdown-demo
+github-repo: https://github.com/Moberg-Analytics-Inc/Moberg-Analytics-HDF5-Documentation
 description: "This is the Moberg Analytics HDF5 documentation. The output format for this example is bookdown::gitbook."
 ---
 
