@@ -17,7 +17,7 @@ description: "This is the Moberg Analytics HDF5 documentation. The output format
 
 # Overview
 
-This documentation details how to use the functions available in the [Moberg-Analytics-HDF5 package](link_to_package). The Moberg-Analytics-HDF5 package provides user-friendly functions organized into classes for reading HDF5 file content and components into Python. It is built on top of the [h5py package](https://www.h5py.org/) which interfaces directly with the HDF5 file.
+This documentation details how to use the functions available in the [Moberg-Analytics-HDF5 package](https://test.pypi.org/project/Moberg-Analytics-HDF5/). The Moberg-Analytics-HDF5 package provides user-friendly functions organized into classes for reading HDF5 file content and components into Python. It is built on top of the [h5py package](https://www.h5py.org/) which interfaces directly with the HDF5 file.
 
 The three **HDF5Content**, **HDF5Components**, and **HDF5Helper** sections in the left-hand navigation bar correspond to the three classes within the hdf5_tools module: 
 
@@ -27,7 +27,7 @@ The three **HDF5Content**, **HDF5Components**, and **HDF5Helper** sections in th
 
 - **HDF5Helper** contains functions for argument, group, dataset, and duplicate checks as well as other methods that add functionality to HDF5Content and HDF5Components.
 
-Each class section is further divided into **Group Functions**, **Dataset Functions**, and **Misc. Functions** sections that contain the relevant functions for working with groups, datasets, or other aspects of the HDF5 file. Every function has a description that details what it does, parameters it accepts (if any), and what it returns when called. There are also code examples that demonstrate how the function is called and what it returns. All of the code examples use the example.h5 HDF5 file, the structure of which is shown below.
+Each class section is further divided into **Group Functions**, **Dataset Functions**, and **Misc. Functions** sections that contain the relevant functions for working with groups, datasets, and other aspects of the HDF5 file. Every function has a description that details what it does, the parameters it accepts (if any), and what it returns. There are also code examples that demonstrate how the function is called and show what it returns. All of the code examples use the example.h5 HDF5 file, the structure of which is shown below.
 
 ## Example HDF5 File Structure
 

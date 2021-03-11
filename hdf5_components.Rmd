@@ -38,6 +38,7 @@ from moberg_analytics_hdf5 import hdf5_tools
 ```{python}
 # Path to the HDF5 file in your system directory
 hdf5_filepath = r"resources\example.h5"
+
 # Instantiate the HDF5Components class
 hdf5_comps = hdf5_tools.HDF5Components(hdf5_filepath=hdf5_filepath)
 ```
@@ -311,8 +312,8 @@ Combines all CNS EEG datasets (EEG channels) within a group into one 2D matrix. 
 *EXAMPLE:*
 
 ```{python}
-# TODO: need to create sample HDF5 file with EEG data
-#eeg_matrix = hdf5_comps.get_eeg_matrix(group_name="SampleSeries", #matrix_type="pandas")
+# NOTE: this is currently an internal Moberg Analytics function
+#eeg_matrix = hdf5_comps.get_eeg_matrix(group_name="SampleSeries", matrix_type="pandas")
 ```
 ```{python, echo=FALSE}
 #pprint.pp(eeg_matrix)
@@ -462,7 +463,7 @@ print(column_names_list)
 
 ### get_values
 
-**get_numpy_values(dataset_name=None, dataset_path=None, matrix_type="pandas")**
+**get_values(dataset_name=None, dataset_path=None, matrix_type="pandas")**
 
 *DESCRIPTION:*
 
@@ -472,13 +473,13 @@ Returns a matrix of the values in the dataset.
 
 - **dataset_name**: str
 
-    name of the dataset to get the NumPy Array from
+    name of the dataset to get the values of
     
     -or-
     
 - **dataset_path**: str
 
-    path of the dataset to get the NumPy Array from
+    path of the dataset to get the values of
     
 - **matrix_type**: str
 
@@ -486,14 +487,14 @@ Returns a matrix of the values in the dataset.
 
 *RETURNS:*
 
-- **dataset_values**: NumPy Array
+- **dataset_values**: Pandas DataFrame or NumPy Array
 
     matrix of dataset values
     
 *EXAMPLE:*
 
 ```{python}
-dataset_values = hdf5_comps.get_values(dataset_name="Dataset A")
+dataset_values = hdf5_comps.get_values(dataset_name="Dataset A", matrix_type="numpy")
 ```
 ```{python, echo=FALSE}
 print(dataset_values)

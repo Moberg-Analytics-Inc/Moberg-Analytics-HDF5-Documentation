@@ -38,6 +38,7 @@ from moberg_analytics_hdf5 import hdf5_tools
 ```{python}
 # Path to the HDF5 file in your system directory
 hdf5_filepath = r"resources\example.h5"
+
 # Instantiate the HDF5Content class
 hdf5_content = hdf5_tools.HDF5Content(hdf5_filepath=hdf5_filepath)
 ```
@@ -96,7 +97,7 @@ none
 all_group_objs_list = hdf5_content.get_all_group_objs()
 ```
 ```{python, echo=FALSE}
-print(all_group_objs_list)
+pprint.pp(all_group_objs_list)
 ```
 
 ### get_all_group_names
@@ -123,7 +124,7 @@ none
 all_group_names_list = hdf5_content.get_all_group_names()
 ```
 ```{python, echo=FALSE}
-print(all_group_names_list)
+pprint.pp(all_group_names_list)
 ```
 
 ### get_all_group_names_dict
@@ -203,7 +204,7 @@ Returns a list of subgroup names within the group at the "group_path" location i
 *EXAMPLE:*
 
 ```{python}
-subgroup_list = hdf5_content.get_subgroups_list(group_path="/Group 1")
+subgroup_list = hdf5_content.get_subgroups_list(group_path="Group 1")
 ```
 ```{python, echo=FALSE}
 print(subgroup_list)
@@ -499,7 +500,7 @@ print(hdf5_filename)
 
 *DESCRIPTION:*
 
-Returns the group or dataset name from the HDF5 file path.
+Returns the group or dataset name from a HDF5 file path.
 
 *PARAMETERS:*
 

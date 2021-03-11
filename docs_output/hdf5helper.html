@@ -225,12 +225,11 @@ methods that add functionality to HDF5Content and HDF5Components.</p>
 <p><em>ATTRIBUTES:</em></p>
 <p>None</p>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="hdf5helper.html#cb74-1"></a><span class="co"># Path to the HDF5 file in your system directory</span></span>
-<span id="cb74-2"><a href="hdf5helper.html#cb74-2"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;resources\example.h5&quot;</span></span>
-<span id="cb74-3"><a href="hdf5helper.html#cb74-3"></a><span class="co"># Instantiate the HDF5Content class</span></span>
-<span id="cb74-4"><a href="hdf5helper.html#cb74-4"></a>hdf5_content <span class="op">=</span> hdf5_tools.HDF5Content(hdf5_filepath<span class="op">=</span>hdf5_filepath)</span>
-<span id="cb74-5"><a href="hdf5helper.html#cb74-5"></a><span class="co"># Instantiate the HDF5Helper class</span></span>
-<span id="cb74-6"><a href="hdf5helper.html#cb74-6"></a>hdf5_helper <span class="op">=</span> hdf5_tools.HDF5Helper()</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb73-1"><a href="hdf5helper.html#cb73-1"></a><span class="co"># Path to the HDF5 file in your system directory</span></span>
+<span id="cb73-2"><a href="hdf5helper.html#cb73-2"></a>hdf5_filepath <span class="op">=</span> <span class="vs">r&quot;resources\example.h5&quot;</span></span>
+<span id="cb73-3"><a href="hdf5helper.html#cb73-3"></a></span>
+<span id="cb73-4"><a href="hdf5helper.html#cb73-4"></a><span class="co"># Instantiate the HDF5Helper class</span></span>
+<span id="cb73-5"><a href="hdf5helper.html#cb73-5"></a>hdf5_helper <span class="op">=</span> hdf5_tools.HDF5Helper()</span></code></pre></div>
 <div id="group-functions-2" class="section level2">
 <h2>Group Functions</h2>
 <div id="check_group_name" class="section level3">
@@ -252,8 +251,8 @@ methods that add functionality to HDF5Content and HDF5Components.</p>
 <li><p><strong>False</strong></p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb75-1"><a href="hdf5helper.html#cb75-1"></a>group_names_list <span class="op">=</span> hdf5_content.get_all_group_names()</span>
-<span id="cb75-2"><a href="hdf5helper.html#cb75-2"></a>valid_group_name <span class="op">=</span> hdf5_helper.check_group_name(group_names_list, group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="hdf5helper.html#cb74-1"></a>group_names_list <span class="op">=</span> hdf5_content.get_all_group_names()</span>
+<span id="cb74-2"><a href="hdf5helper.html#cb74-2"></a>valid_group_name <span class="op">=</span> hdf5_helper.check_group_name(group_names_list, group_name<span class="op">=</span><span class="st">&quot;Group 1&quot;</span>)</span></code></pre></div>
 <pre><code>## True</code></pre>
 </div>
 <div id="is_group" class="section level3">
@@ -273,8 +272,8 @@ methods that add functionality to HDF5Content and HDF5Components.</p>
 <li><p><strong>False</strong></p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb77-1"><a href="hdf5helper.html#cb77-1"></a>group_obj <span class="op">=</span> hdf5_content.get_all_group_objs()[<span class="dv">0</span>]</span>
-<span id="cb77-2"><a href="hdf5helper.html#cb77-2"></a>group_obj_bool <span class="op">=</span> hdf5_helper.is_group(hdf5_obj<span class="op">=</span>group_obj)</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="hdf5helper.html#cb76-1"></a>group_obj <span class="op">=</span> hdf5_content.get_all_group_objs()[<span class="dv">0</span>]</span>
+<span id="cb76-2"><a href="hdf5helper.html#cb76-2"></a>group_obj_bool <span class="op">=</span> hdf5_helper.is_group(hdf5_obj<span class="op">=</span>group_obj)</span></code></pre></div>
 <pre><code>## True</code></pre>
 </div>
 </div>
@@ -299,8 +298,8 @@ methods that add functionality to HDF5Content and HDF5Components.</p>
 <li><p><strong>False</strong></p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb79-1"><a href="hdf5helper.html#cb79-1"></a>dataset_names_list <span class="op">=</span> hdf5_content.get_all_dataset_names()</span>
-<span id="cb79-2"><a href="hdf5helper.html#cb79-2"></a>valid_dataset_name <span class="op">=</span> hdf5_helper.check_dataset_name(dataset_names_list, dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb78-1"><a href="hdf5helper.html#cb78-1"></a>dataset_names_list <span class="op">=</span> hdf5_content.get_all_dataset_names()</span>
+<span id="cb78-2"><a href="hdf5helper.html#cb78-2"></a>valid_dataset_name <span class="op">=</span> hdf5_helper.check_dataset_name(dataset_names_list, dataset_name<span class="op">=</span><span class="st">&quot;Dataset A&quot;</span>)</span></code></pre></div>
 <pre><code>## True</code></pre>
 </div>
 <div id="is_dataset" class="section level3">
@@ -320,8 +319,8 @@ methods that add functionality to HDF5Content and HDF5Components.</p>
 <li><p><strong>False</strong></p></li>
 </ul>
 <p><em>EXAMPLE:</em></p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb81-1"><a href="hdf5helper.html#cb81-1"></a>dataset_obj <span class="op">=</span> hdf5_content.get_all_dataset_objs()[<span class="dv">0</span>]</span>
-<span id="cb81-2"><a href="hdf5helper.html#cb81-2"></a>dataset_obj_bool <span class="op">=</span> hdf5_helper.is_dataset(hdf5_obj<span class="op">=</span>dataset_obj)</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb80-1"><a href="hdf5helper.html#cb80-1"></a>dataset_obj <span class="op">=</span> hdf5_content.get_all_dataset_objs()[<span class="dv">0</span>]</span>
+<span id="cb80-2"><a href="hdf5helper.html#cb80-2"></a>dataset_obj_bool <span class="op">=</span> hdf5_helper.is_dataset(hdf5_obj<span class="op">=</span>dataset_obj)</span></code></pre></div>
 <pre><code>## True</code></pre>
 
 </div>
