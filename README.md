@@ -1,3 +1,2 @@
-This is the documentation for the HDF5 API.
+This RStudio Bookdown code builds the [Moberg-Analytics-HDF5 package](https://test.pypi.org/project/Moberg-Analytics-HDF5/) documentation.
 
-GitHub Repository Link: https://github.com/ZackGoldblum/HDF5_API_Documentation.git
