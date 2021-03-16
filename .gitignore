@@ -5,3 +5,6 @@ _publish.R
 _book
 _bookdown_files
 rsconnect
+docs/HDF5-API-Documentation.epub
+docs/HDF5-API-Documentation.pdf
+docs/HDF5-API-Documentation.tex

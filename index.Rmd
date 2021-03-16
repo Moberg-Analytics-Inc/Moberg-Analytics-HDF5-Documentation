@@ -11,7 +11,7 @@ description: "Documentation for the Moberg Analytics HDF5 package."
 
 # Overview
 
-This documentation details how to use the functions available in the [Moberg-Analytics-HDF5 package](https://test.pypi.org/project/Moberg-Analytics-HDF5/). The Moberg-Analytics-HDF5 package provides user-friendly functions organized into classes for reading HDF5 file content and components into Python. It is built on top of the [h5py package](https://www.h5py.org/) which interfaces directly with the HDF5 file.
+This documentation details how to use the functions available in the [Moberg-Analytics-HDF5 package](https://pypi.org/project/Moberg-Analytics-HDF5/). The Moberg-Analytics-HDF5 package provides user-friendly functions organized into classes for reading HDF5 file content and components into Python. It is built on top of the [h5py package](https://www.h5py.org/) which interfaces directly with the HDF5 file.
 
 The three **HDF5Content**, **HDF5Components**, and **HDF5Helper** sections in the left-hand navigation bar correspond to the three classes within the hdf5_tools module: 
 
